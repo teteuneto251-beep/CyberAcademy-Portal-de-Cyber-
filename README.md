@@ -8,7 +8,7 @@
 
 > **Plataforma interativa de Engenharia de Defesa Cibernética, Operações SOC, Análise de Tráfego (Wireshark), Hardening Perimetral (`iptables`) e Governança de Identidades (IAM).**  
 > Consolida **100% do conteúdo técnico dos 18 documentos oficiais da formação**, com materiais de estudos, apostilas, guias práticos e blueprints elaborados pelo **Prof. Rômulo Pereira de Almeida**, e plataforma interativa e relatórios técnicos desenvolvidos por **José Matheus dos Santos Neto**.
-
+link direto que leva para o sate https://cyber20.netlify.app/
 ---
 
 ## 👨‍💻 Autoria & Créditos Acadêmicos
