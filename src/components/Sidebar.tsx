@@ -279,7 +279,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
         </div>
 
-        {/* Card de Autoria & Engenharia */}
+        {/* Card de Autoria & Material Didático */}
         <div
           className={`mt-6 p-3.5 rounded-xl border space-y-2.5 ${
             isLightMode
@@ -296,9 +296,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 José Matheus dos Santos Neto
               </p>
               <p className={`text-[10px] truncate ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
-                Engenharia &amp; Defesa Cibernética
+                Autor do Portal &amp; Relatórios
               </p>
             </div>
+          </div>
+
+          <div className={`pt-2 border-t text-[10px] ${isLightMode ? 'border-slate-200 text-slate-700' : 'border-slate-800/80 text-slate-300'}`}>
+            <span className="text-slate-500 dark:text-slate-400 block font-mono uppercase text-[9px]">
+              Material de Estudos &amp; Docência:
+            </span>
+            <strong className={isLightMode ? 'text-slate-900' : 'text-white'}>
+              Prof. Rômulo Pereira de Almeida
+            </strong>
           </div>
 
           <a

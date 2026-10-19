@@ -355,8 +355,8 @@ export default function App() {
                 Desenvolvido por José Matheus dos Santos Neto
               </span>
               <span className="mx-2 text-slate-400">•</span>
-              <span className={isLightMode ? 'text-slate-600' : 'text-slate-400'}>
-                Plataforma Técnica de Engenharia &amp; Defesa Cibernética
+              <span className={isLightMode ? 'text-slate-700' : 'text-slate-300'}>
+                Material de Estudos: <strong>Prof. Rômulo Pereira de Almeida</strong>
               </span>
             </div>
           </div>

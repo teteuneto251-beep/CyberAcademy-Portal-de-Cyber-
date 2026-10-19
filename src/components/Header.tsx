@@ -87,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({
                   isLightMode ? 'text-slate-600' : 'text-slate-400'
                 }`}
               >
-                Por <strong className={isLightMode ? 'text-slate-900' : 'text-slate-200'}>José Matheus dos Santos Neto</strong> • Criado em 19/10/2026
+                Material: <strong className={isLightMode ? 'text-slate-900' : 'text-slate-200'}>Prof. Rômulo Pereira de Almeida</strong> • Autor do Portal: <strong className={isLightMode ? 'text-slate-900' : 'text-slate-200'}>José Matheus dos Santos Neto</strong>
               </p>
             </div>
           </div>

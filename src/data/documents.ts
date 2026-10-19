@@ -13,7 +13,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "01",
     titulo: "Guia de Aula: Introdução à Cybersecurity, Panorama e Carreiras Corporativas",
     categoria: "Apostila",
-    autor: "Coordenação de Cybersecurity & Defesa",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod1",
     resumo: "Tríade CIA (Confidencialidade, Integridade, Disponibilidade), Estudo de caso AWS Oriente Médio e Mapeamento de 8 Carreiras Técnicas.",
     tags: ["CIA", "AWS", "Carreiras", "Blue Team", "SOC", "Nuvem"]
@@ -22,7 +22,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "02",
     titulo: "Guia de Estudos: Fundamentos de Ambientes Corporativos e Dependências",
     categoria: "Apostila",
-    autor: "Coordenação de Cybersecurity & Defesa",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod1",
     resumo: "Caso Horizonte Serviços: Análise das 4 camadas de sustentação do negócio, Endpoints, DNS, DHCP, NTP e Serviços Críticos.",
     tags: ["Horizonte", "DNS", "DHCP", "NTP", "Dependências", "Ativos"]
@@ -31,7 +31,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "03",
     titulo: "Introdução ao Ciclo de Defesa, SOC e NIST CSF 2.0",
     categoria: "Apostila",
-    autor: "Coordenação de Cybersecurity & Defesa",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod2",
     resumo: "As 6 Funções do NIST CSF 2.0 (Govern, Identify, Protect, Detect, Respond, Recover), NIST SP 800-61r3, Fontes de Logs e Triagem ALT-042.",
     tags: ["NIST", "CSF 2.0", "SOC", "Blue Team", "ALT-042", "Logs"]
@@ -40,7 +40,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "04",
     titulo: "Atividade Prática: Ameaças, Vulnerabilidades e Riscos (Caso Aurora)",
     categoria: "Guia Prático",
-    autor: "Coordenação de Cybersecurity & Defesa",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod3",
     resumo: "Enunciado oficial e diagnóstico do Caso Aurora Distribuição Corporativa (Relatos C01 a C10, limites de RTO/RPO e fornecedor NexoTI).",
     tags: ["Aurora", "Ameaças", "Vulnerabilidades", "RTO", "RPO", "NexoTI"]
@@ -49,7 +49,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "05",
     titulo: "Laboratório Prático: Advanced IP Scanner e Análise com Wireshark",
     categoria: "Guia Prático",
-    autor: "Coordenação de Redes & Telecomunicações",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod4",
     resumo: "Roteiro técnico de varredura de sub-redes locais, identificação de MAC OUI, consultas DNS e Three-Way Handshake TCP.",
     tags: ["IP Scanner", "Wireshark", "MAC", "Handshake", "TCP", "DNS"]
@@ -58,7 +58,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "06",
     titulo: "Lab Hardening de Rede NetSim: Roteiro Passo a Passo",
     categoria: "Guia Prático",
-    autor: "Coordenação de Redes & Telecomunicações",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod5",
     resumo: "Roteiro de execução do Lab 5 no simulador NetSim com comandos iptables stateful conntrack e bloqueio padrão DROP.",
     tags: ["NetSim", "iptables", "Firewall", "DROP", "Conntrack", "Hardening"]
@@ -67,7 +67,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "07",
     titulo: "Lab Hardening de Rede NetSim: Guia Visual de Topologia",
     categoria: "Guia Prático",
-    autor: "Coordenação de Redes & Telecomunicações",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod5",
     resumo: "Edição com diagramas de rede, fluxos de pacotes WAN/LAN e topologia de referência antes e depois da blindagem.",
     tags: ["NetSim", "Topologia", "Perímetro", "Diagramas", "Interfaces"]
@@ -76,7 +76,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "08",
     titulo: "Guia Prático: Hardening de Rede em 3 Segmentos Criada do Zero",
     categoria: "Guia Prático",
-    autor: "Coordenação de Redes & Telecomunicações",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod5",
     resumo: "Construção arquitetural isolada: Sub-rede Usuários (192.168.10.0), Servidores (192.168.20.0) e Visitantes (192.168.30.0).",
     tags: ["3 Zonas", "Segmentação", "DMZ", "Visitantes", "Zero Trust"]
@@ -85,7 +85,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "09",
     titulo: "Material Didático: Fundamentos de Identidade e Controle de Acesso (IAM)",
     categoria: "Apostila",
-    autor: "Coordenação de Governança & IAM",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod6",
     resumo: "Conceituação precisa de Identidade Digital, Conta, Credencial, Autenticador, Modelo RBAC, Princípio do Menor Privilégio e Ciclo JML.",
     tags: ["IAM", "Identidade", "Credencial", "RBAC", "JML", "Menor Privilégio"]
@@ -94,7 +94,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "10",
     titulo: "Material Didático: Autenticação, Autorização, MFA, SoD e Resistência a Phishing",
     categoria: "Apostila",
-    autor: "Coordenação de Governança & IAM",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod6",
     resumo: "Distinção entre Authn e Authz, matriz de avaliação de fatores MFA, FIDO2/Passkey vs SMS/TOTP, e Segregação de Funções (SoD).",
     tags: ["MFA", "FIDO2", "Passkey", "Phishing", "Authn", "Authz", "SoD"]
@@ -103,7 +103,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "11",
     titulo: "Blueprint de Arquitetura de Acesso e Governança IAM",
     categoria: "Apostila",
-    autor: "Coordenação de Governança & IAM",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod6",
     resumo: "Diagnóstico visual AAA, catálogo de papéis operacionais, microtarefas de mudança (Mover) e desligamento seguro (Leaver).",
     tags: ["Blueprint", "AAA", "Mover", "Leaver", "Auditoria", "Accounting"]
@@ -157,7 +157,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "17",
     titulo: "IAM Blueprint: Modelando o Controle de Acesso com RBAC e ABAC",
     categoria: "Apostila",
-    autor: "Coordenação de Governança & IAM",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod6",
     resumo: "Arquitetura XACML/NIST SP 800-162: Fronteira da Autorização, Anatomia da Decisão, Hierarquia de Papéis, Risco de Explosão de Papéis e o Modelo Híbrido H1.",
     tags: ["IAM", "RBAC", "ABAC", "PEP", "PDP", "PIP", "PAP", "Modelo Híbrido", "SoD"]
@@ -166,7 +166,7 @@ export const acervo16Docs: TechDoc[] = [
     num: "18",
     titulo: "Guia de Estudos Avançado: Controles de Acesso RBAC e ABAC na Prática",
     categoria: "Guia Prático",
-    autor: "Coordenação de Governança & IAM",
+    autor: "Prof. Rômulo Pereira de Almeida",
     modulo: "mod6",
     resumo: "Metodologia de 8 etapas, Dicionário de Atributos, Sintaxe da Regra A1, Matriz de Testes T1-T10, Regra de Ouro (Ausente != Permitido) e Resolução de Conflitos.",
     tags: ["RBAC", "ABAC", "Dicionário", "Matriz de Testes", "Horizonte", "NIST SP 800-205"]

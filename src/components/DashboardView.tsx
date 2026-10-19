@@ -152,51 +152,84 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <p className={`text-sm sm:text-base leading-relaxed ${isLightMode ? 'text-slate-600' : 'text-slate-300'}`}>
             Ambiente técnico e laboratorial consolidando{' '}
             <strong className={isLightMode ? 'text-slate-900' : 'text-white'}>
-              100% dos 18 referenciais normativos, guias operacionais, blueprints arquiteturais e relatórios técnicos de engenharia
-            </strong>. Estruturado conforme diretrizes internacionais de Blue Team, Operações SOC, Hardening de Redes e Governança de Riscos.
+              100% dos 18 materiais didáticos, guias práticos, blueprints arquiteturais e relatórios técnicos de laboratório
+            </strong>{' '}
+            com material de estudos de autoria do{' '}
+            <strong className={isLightMode ? 'text-slate-900' : 'text-white'}>
+              Prof. Rômulo Pereira de Almeida
+            </strong>{' '}
+            e plataforma desenvolvida por{' '}
+            <strong className={isLightMode ? 'text-slate-900' : 'text-white'}>
+              José Matheus dos Santos Neto
+            </strong>.
           </p>
 
-          {/* Author & LinkedIn Attribution Card */}
+          {/* Author, Professor & LinkedIn Attribution Card */}
           <div
-            className={`p-4 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
+            className={`p-4 rounded-2xl border space-y-3 ${
               isLightMode
                 ? 'bg-white/95 border-slate-200 shadow-sm'
                 : 'bg-slate-900/80 border-slate-800'
             }`}
           >
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600 to-rose-700 text-white keep-white font-extrabold text-sm flex items-center justify-center shadow-md shrink-0">
-                JM
-              </div>
-              <div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className={`text-sm font-extrabold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
-                    José Matheus dos Santos Neto
-                  </span>
-                  <span className="px-2 py-0.5 rounded bg-red-500/15 text-red-700 dark:text-red-400 border border-red-500/30 font-mono text-[10px] font-bold">
-                    Autor &amp; Engenheiro Responsável
-                  </span>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600 to-rose-700 text-white keep-white font-extrabold text-sm flex items-center justify-center shadow-md shrink-0">
+                  JM
                 </div>
-                <p className={`text-xs mt-0.5 font-mono ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
-                  Data de criação do portal: <strong>19 de Outubro de 2026</strong> • linkedin.com/in/jose-matheus-dos-santos-neto-a37974384
-                </p>
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className={`text-sm font-extrabold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+                      José Matheus dos Santos Neto
+                    </span>
+                    <span className="px-2 py-0.5 rounded bg-red-500/15 text-red-700 dark:text-red-400 border border-red-500/30 font-mono text-[10px] font-bold">
+                      Autor do Portal &amp; Engenheiro Responsável
+                    </span>
+                  </div>
+                  <p className={`text-xs mt-0.5 font-mono ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
+                    Data de criação do portal: <strong>19 de Outubro de 2026</strong> • linkedin.com/in/jose-matheus-dos-santos-neto-a37974384
+                  </p>
+                </div>
               </div>
+
+              <a
+                href="https://www.linkedin.com/in/jose-matheus-dos-santos-neto-a37974384"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`px-4 py-2 rounded-xl font-semibold text-xs border transition flex items-center gap-2 shrink-0 ${
+                  isLightMode
+                    ? 'bg-blue-50 hover:bg-blue-100 text-blue-900 border-blue-200'
+                    : 'bg-blue-950/60 hover:bg-blue-900/70 text-blue-300 border-blue-700/60'
+                }`}
+              >
+                <Linkedin className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                <span>Acessar LinkedIn</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
 
-            <a
-              href="https://www.linkedin.com/in/jose-matheus-dos-santos-neto-a37974384"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`px-4 py-2 rounded-xl font-semibold text-xs border transition flex items-center gap-2 shrink-0 ${
-                isLightMode
-                  ? 'bg-blue-50 hover:bg-blue-100 text-blue-900 border-blue-200'
-                  : 'bg-blue-950/60 hover:bg-blue-900/70 text-blue-300 border-blue-700/60'
+            {/* Credit to Prof. Rômulo Pereira de Almeida */}
+            <div
+              className={`pt-3 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs ${
+                isLightMode ? 'border-slate-200 text-slate-700' : 'border-slate-800 text-slate-300'
               }`}
             >
-              <Linkedin className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-              <span>Acessar LinkedIn</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center font-extrabold text-cyan-700 dark:text-cyan-400 text-xs shrink-0">
+                  RP
+                </div>
+                <div>
+                  <span className="font-bold">Prof. Rômulo Pereira de Almeida</span>
+                  <span className="mx-2 text-slate-400">•</span>
+                  <span className={isLightMode ? 'text-slate-600' : 'text-slate-400'}>
+                    Autor do Material de Estudos, Apostilas Técnicas, Guias de Laboratório &amp; Blueprints IAM
+                  </span>
+                </div>
+              </div>
+              <span className="px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-700 dark:text-cyan-400 font-mono text-[10px] font-bold shrink-0 w-fit">
+                Autoria Didática Oficial
+              </span>
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-3 pt-1">

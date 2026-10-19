@@ -1,20 +1,22 @@
 # 🛡️ Portal Executivo de Engenharia & Operações de Cybersecurity (SOC)
 
-[![Autor](https://img.shields.io/badge/Autor-Jos%C3%A9%20Matheus%20dos%20Santos%20Neto-dc2626?style=for-the-badge)](https://www.linkedin.com/in/jose-matheus-dos-santos-neto-a37974384)
+[![Autor do Portal](https://img.shields.io/badge/Autor%20do%20Portal-Jos%C3%A9%20Matheus%20dos%20Santos%20Neto-dc2626?style=for-the-badge)](https://www.linkedin.com/in/jose-matheus-dos-santos-neto-a37974384)
+[![Material Didático](https://img.shields.io/badge/Material%20de%20Estudos-Prof.%20R%C3%B4mulo%20Pereira%20de%20Almeida-0891b2?style=for-the-badge)]()
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jose-matheus-dos-santos-neto-a37974384)
 [![Data de Criação](https://img.shields.io/badge/Criado%20em-19%2F10%2F2026-0f172a?style=for-the-badge)]()
 [![Frameworks](https://img.shields.io/badge/Frameworks-NIST%20CSF%202.0%20%7C%20ISO%2027001%20%7C%20Zero%20Trust-10b981?style=for-the-badge)]()
 
 > **Plataforma interativa de Engenharia de Defesa Cibernética, Operações SOC, Análise de Tráfego (Wireshark), Hardening Perimetral (`iptables`) e Governança de Identidades (IAM).**  
-> Consolida **100% do conteúdo técnico dos 18 documentos oficiais da formação**, combinando enciclopédia teórica aprofundada com **6 simuladores e laboratórios práticos em tempo real**.
+> Consolida **100% do conteúdo técnico dos 18 documentos oficiais da formação**, com materiais de estudos, apostilas, guias práticos e blueprints elaborados pelo **Prof. Rômulo Pereira de Almeida**, e plataforma interativa e relatórios técnicos desenvolvidos por **José Matheus dos Santos Neto**.
 
 ---
 
-## 👨‍💻 Autor & Responsável Técnico
+## 👨‍💻 Autoria & Créditos Acadêmicos
 
-- **Nome:** José Matheus dos Santos Neto
+- **Desenvolvedor do Portal & Relatórios Técnicos:** José Matheus dos Santos Neto
 - **LinkedIn:** [linkedin.com/in/jose-matheus-dos-santos-neto-a37974384](https://www.linkedin.com/in/jose-matheus-dos-santos-neto-a37974384)
-- **Data de Criação:** 19 de Outubro de 2026 (`19/10/2026`)
+- **Autor do Material de Estudos & Professor Responsável:** Prof. Rômulo Pereira de Almeida
+- **Data de Criação do Portal:** 19 de Outubro de 2026 (`19/10/2026`)
 
 ---
 
@@ -155,8 +157,9 @@ npm run preview
 
 ---
 
-## 📬 Contato
+## 📬 Contato & Créditos
 
-Desenvolvido por **José Matheus dos Santos Neto** em **19 de Outubro de 2026**.
-
+- **Desenvolvimento do Portal & Relatórios Técnicos:** **José Matheus dos Santos Neto** (Criado em **19 de Outubro de 2026**)
+- **Autoria do Material de Estudos & Docência:** **Prof. Rômulo Pereira de Almeida**
 - 🔗 **LinkedIn:** [https://www.linkedin.com/in/jose-matheus-dos-santos-neto-a37974384](https://www.linkedin.com/in/jose-matheus-dos-santos-neto-a37974384)
+

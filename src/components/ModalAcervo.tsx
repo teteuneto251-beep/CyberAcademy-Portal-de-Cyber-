@@ -50,7 +50,7 @@ export const ModalAcervo: React.FC<ModalAcervoProps> = ({
                 Inventário Oficial do Acervo Técnico ({acervoDocs.length} Documentos)
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400">
-                13 Apostilas e Guias Práticos + 5 Relatórios Técnicos e Workbooks
+                13 Materiais de Estudos (<strong>Prof. Rômulo Pereira de Almeida</strong>) + 5 Relatórios Técnicos (<strong>José Matheus dos Santos Neto</strong>)
               </p>
             </div>
           </div>
