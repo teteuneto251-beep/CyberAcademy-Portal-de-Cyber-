@@ -1,0 +1,7 @@
+{
+  "name": "Engenharia & Defesa Cibernética | Plataforma Técnica de Segurança & SOC",
+  "description": "Plataforma técnica de Engenharia em Cybersecurity com 6 módulos didáticos, laboratórios interativos, dissecador de pacotes, simulador de firewall e simulado prático.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

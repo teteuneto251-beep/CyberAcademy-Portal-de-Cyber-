@@ -1,0 +1,518 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-main: #060911;
+    --text-main: #e2e8f0;
+    --card-bg: rgba(17, 24, 39, 0.85);
+    --card-border: rgba(51, 65, 85, 0.65);
+    --header-bg: rgba(2, 6, 23, 0.92);
+    --sidebar-bg: rgba(2, 6, 23, 0.95);
+    --subtext: #94a3b8;
+  }
+
+  html.light, body.light {
+    --bg-main: #f8fafc;
+    --text-main: #0f172a;
+    --card-bg: #ffffff;
+    --card-border: #cbd5e1;
+    --header-bg: rgba(255, 255, 255, 0.98);
+    --sidebar-bg: rgba(255, 255, 255, 0.98);
+    --subtext: #334155;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    overflow-x: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  code, pre, kbd, samp {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
+}
+
+/* Glassmorphism card utility */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+}
+
+html.light .glass-card {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.06);
+  color: #0f172a;
+}
+html.light .glass-card:hover {
+  border-color: #94a3b8 !important;
+  box-shadow: 0 10px 24px -4px rgba(15, 23, 42, 0.1);
+}
+
+.terminal-bg {
+  background: #05080f;
+  border: 1px solid #1e293b;
+  box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+html.light .terminal-bg {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: inset 0 1px 4px rgba(15, 23, 42, 0.06) !important;
+  color: #0f172a !important;
+}
+
+.nav-active {
+  background: linear-gradient(90deg, rgba(235, 23, 0, 0.18) 0%, rgba(30, 41, 59, 0.25) 100%);
+  border-left: 3px solid #eb1700;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+html.light .nav-active {
+  background: linear-gradient(90deg, rgba(235, 23, 0, 0.12) 0%, rgba(241, 245, 249, 0.9) 100%);
+  border-left: 3px solid #eb1700;
+  color: #b91c1c !important;
+  font-weight: 700;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.9); }
+}
+
+.animate-dot {
+  animation: pulse-dot 2s infinite;
+}
+
+/* ==========================================================================
+   MODO BRANCO COMPLETO: REGRAS ESTRITAS DE CONTRASTE & TIPOGRAFIA
+   Garante que todas as letras fiquem pretas/escuras sobre fundos claros
+   ========================================================================== */
+
+html.light {
+  color: #0f172a;
+}
+
+/* Títulos h1 a h6 sempre pretos/grafite escuro no modo branco */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #0f172a !important;
+}
+
+/* Converte classes utilitárias de texto branco e cinza claro em preto/grafite escuro no modo branco */
+html.light .text-white:not(.keep-white),
+html.light .text-slate-100:not(.keep-white),
+html.light .text-slate-200:not(.keep-white),
+html.light .text-gray-100:not(.keep-white),
+html.light .text-gray-200:not(.keep-white),
+html.light .text-zinc-100:not(.keep-white),
+html.light .text-zinc-200:not(.keep-white) {
+  color: #0f172a !important;
+}
+
+/* Textos secundários (slate-300, slate-400, slate-500, slate-600) em grafite escuro de alta legibilidade */
+html.light .text-slate-300,
+html.light .text-gray-300,
+html.light .text-zinc-300 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-400,
+html.light .text-gray-400,
+html.light .text-zinc-400 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-500,
+html.light .text-slate-600 {
+  color: #475569 !important;
+}
+
+/* Cartões com gradientes escuros invertem para superfícies claras elegantes no modo branco */
+html.light [class*="from-slate-950"],
+html.light [class*="from-slate-900"],
+html.light [class*="via-slate-900"],
+html.light [class*="to-slate-950"],
+html.light [class*="to-blue-950"],
+html.light [class*="to-red-950"],
+html.light [class*="to-rose-950"],
+html.light [class*="to-amber-950"],
+html.light [class*="to-purple-950"] {
+  background-image: none !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Sub-cartões e painéis internos adaptam-se para superfícies claras com bordas contrastadas */
+html.light .bg-slate-900\/95,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/70,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/50,
+html.light .bg-slate-900\/40,
+html.light .bg-slate-900\/30,
+html.light .bg-slate-900\/20,
+html.light .bg-slate-900 {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light .bg-slate-950\/95,
+html.light .bg-slate-950\/90,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/50,
+html.light .bg-slate-950,
+html.light .bg-black,
+html.light .bg-\[\#0a1810\] {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light .bg-slate-800\/80,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-800\/50,
+html.light .bg-slate-800 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light .border-slate-800,
+html.light .border-slate-800\/90,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/60,
+html.light .border-slate-800\/40,
+html.light .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Inputs, select e textarea com texto escuro e fundo nítido no modo branco */
+html.light input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html.light select,
+html.light textarea {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+  border-color: #94a3b8 !important;
+}
+
+html.light select option {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+}
+
+/* ==========================================================================
+   AJUSTE DE ÍCONES E TEXTOS COLORIDOS (ALTO CONTRASTE EM FUNDO BRANCO)
+   ========================================================================== */
+
+html.light .text-emerald-400,
+html.light .text-emerald-300,
+html.light .text-emerald-200 {
+  color: #047857 !important;
+}
+
+html.light .text-cyan-400,
+html.light .text-cyan-300,
+html.light .text-cyan-200 {
+  color: #0e7490 !important;
+}
+
+html.light .text-blue-400,
+html.light .text-blue-300,
+html.light .text-blue-200 {
+  color: #1d4ed8 !important;
+}
+
+html.light .text-amber-400,
+html.light .text-amber-300,
+html.light .text-amber-200,
+html.light .text-yellow-400 {
+  color: #b45309 !important;
+}
+
+html.light .text-orange-400,
+html.light .text-orange-300 {
+  color: #c2410c !important;
+}
+
+html.light .text-red-400,
+html.light .text-red-300,
+html.light .text-red-200 {
+  color: #b91c1c !important;
+}
+
+html.light .text-purple-400,
+html.light .text-purple-300,
+html.light .text-purple-200 {
+  color: #6d28d9 !important;
+}
+
+html.light .text-rose-400,
+html.light .text-rose-300,
+html.light .text-rose-200 {
+  color: #be123c !important;
+}
+
+/* Badges e tags nos laboratórios ganham contraste nítido no modo branco */
+html.light .bg-emerald-500\/15,
+html.light .bg-emerald-500\/20,
+html.light .bg-emerald-500\/10,
+html.light .bg-emerald-900\/80 {
+  background-color: #ecfdf5 !important;
+  color: #065f46 !important;
+  border-color: #6ee7b7 !important;
+}
+
+html.light .bg-cyan-500\/15,
+html.light .bg-cyan-500\/20,
+html.light .bg-cyan-500\/10,
+html.light .bg-cyan-600\/25 {
+  background-color: #ecfeff !important;
+  color: #155e75 !important;
+  border-color: #67e8f9 !important;
+}
+
+html.light .bg-blue-500\/15,
+html.light .bg-blue-500\/20,
+html.light .bg-blue-500\/10,
+html.light .bg-blue-600\/20,
+html.light .bg-blue-900\/80 {
+  background-color: #eff6ff !important;
+  color: #1e40af !important;
+  border-color: #93c5fd !important;
+}
+
+html.light .bg-amber-500\/15,
+html.light .bg-amber-500\/20,
+html.light .bg-amber-500\/10,
+html.light .bg-yellow-500\/15 {
+  background-color: #fffbeb !important;
+  color: #92400e !important;
+  border-color: #fcd34d !important;
+}
+
+html.light .bg-orange-500\/20 {
+  background-color: #fff7ed !important;
+  color: #9a3412 !important;
+  border-color: #fdba74 !important;
+}
+
+html.light .bg-red-500\/15,
+html.light .bg-red-500\/20,
+html.light .bg-red-500\/10,
+html.light .bg-red-900\/80 {
+  background-color: #fef2f2 !important;
+  color: #991b1b !important;
+  border-color: #fca5a5 !important;
+}
+
+html.light .bg-purple-500\/15,
+html.light .bg-purple-500\/20,
+html.light .bg-purple-500\/10,
+html.light .bg-purple-600\/25 {
+  background-color: #faf5ff !important;
+  color: #5b21b6 !important;
+  border-color: #d8b4fe !important;
+}
+
+html.light .bg-rose-500\/15,
+html.light .bg-rose-500\/20,
+html.light .bg-rose-500\/10,
+html.light .bg-rose-600\/20,
+html.light .bg-rose-600\/30 {
+  background-color: #fff1f2 !important;
+  color: #9f1239 !important;
+  border-color: #fda4af !important;
+}
+
+/* ==========================================================================
+   BOTÕES, PAINÉIS DE ESTADO E TABELAS NOS LABORATÓRIOS
+   ========================================================================== */
+
+html.light button.bg-slate-900,
+html.light button.bg-slate-900\/90,
+html.light button.bg-slate-900\/80,
+html.light button.bg-slate-900\/70,
+html.light button.bg-slate-950,
+html.light button.bg-slate-800 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+html.light button.bg-slate-900:hover,
+html.light button.bg-slate-950:hover,
+html.light button.bg-slate-800:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  color: #000000 !important;
+}
+
+/* Painéis e botões com fundo 950 colorido */
+html.light [class*="bg-emerald-950"] {
+  background-color: #ecfdf5 !important;
+  border-color: #10b981 !important;
+  color: #065f46 !important;
+}
+
+html.light [class*="bg-red-950"] {
+  background-color: #fef2f2 !important;
+  border-color: #ef4444 !important;
+  color: #991b1b !important;
+}
+
+html.light [class*="bg-blue-950"] {
+  background-color: #eff6ff !important;
+  border-color: #3b82f6 !important;
+  color: #1e40af !important;
+}
+
+html.light [class*="bg-amber-950"] {
+  background-color: #fffbeb !important;
+  border-color: #f59e0b !important;
+  color: #92400e !important;
+}
+
+html.light [class*="bg-orange-950"] {
+  background-color: #fff7ed !important;
+  border-color: #f97316 !important;
+  color: #9a3412 !important;
+}
+
+html.light [class*="bg-purple-950"] {
+  background-color: #faf5ff !important;
+  border-color: #a855f7 !important;
+  color: #5b21b6 !important;
+}
+
+html.light [class*="bg-rose-950"] {
+  background-color: #fff1f2 !important;
+  border-color: #f43f5e !important;
+  color: #9f1239 !important;
+}
+
+html.light [class*="bg-cyan-950"] {
+  background-color: #ecfeff !important;
+  border-color: #06b6d4 !important;
+  color: #155e75 !important;
+}
+
+/* Tabelas em todos os módulos */
+html.light table thead tr {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-bottom: 2px solid #cbd5e1 !important;
+}
+
+html.light table thead th {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html.light table tbody tr {
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light table tbody td {
+  color: #0f172a;
+}
+
+html.light table tbody tr:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Código em linha */
+html.light code {
+  background-color: #f1f5f9 !important;
+  color: #b91c1c !important;
+  border: 1px solid #cbd5e1 !important;
+  padding: 0.1rem 0.35rem !important;
+  border-radius: 0.35rem !important;
+  font-weight: 600 !important;
+}
+
+/* ==========================================================================
+   BOTÕES E BADGES COM PREENCHIMENTO SÓLIDO FORTE MANTÊM TEXTO BRANCO
+   (Usa seletores de classe exatos para NUNCA afetar fundos translúcidos /20 ou /30)
+   ========================================================================== */
+
+html.light .bg-red-600,
+html.light .bg-red-700,
+html.light .bg-red-500,
+html.light .bg-blue-600,
+html.light .bg-blue-700,
+html.light .bg-emerald-600,
+html.light .bg-emerald-700,
+html.light .bg-purple-600,
+html.light .bg-rose-600,
+html.light .bg-indigo-600,
+html.light .bg-amber-600,
+html.light .bg-orange-600,
+html.light .bg-cyan-600,
+html.light .keep-white,
+html.light [data-preserve-white="true"],
+html.light button.bg-red-600 > *:not(.text-slate-950),
+html.light button.bg-emerald-600 > *:not(.text-slate-950),
+html.light button.bg-blue-600 > *:not(.text-slate-950),
+html.light button.bg-purple-600 > *:not(.text-slate-950),
+html.light button.bg-rose-600 > *:not(.text-slate-950),
+html.light button.bg-amber-600 > *:not(.text-slate-950),
+html.light button.bg-cyan-600 > *:not(.text-slate-950) {
+  color: #ffffff !important;
+}
+
+/* Otimização de Impressão */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header, aside, .sticky, button {
+    display: none !important;
+  }
+}
