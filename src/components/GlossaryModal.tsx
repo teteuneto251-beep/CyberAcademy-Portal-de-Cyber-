@@ -72,8 +72,11 @@ export const GlossaryModal: React.FC<GlossaryModalProps> = ({ isOpen, onClose })
             <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
             <input
               type="text"
+              maxLength={80}
+              autoComplete="off"
+              spellCheck={false}
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => setSearchTerm(e.target.value.slice(0, 80))}
               placeholder="Buscar termo ou norma..."
               className="w-full bg-slate-950 border border-slate-800 rounded-lg pl-8 pr-3 py-1.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500/50"
             />

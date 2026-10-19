@@ -100,8 +100,11 @@ export const Header: React.FC<HeaderProps> = ({
             <input
               id="global-search"
               type="text"
+              maxLength={80}
+              autoComplete="off"
+              spellCheck={false}
               value={searchQuery}
-              onChange={(e) => onSearchChange(e.target.value)}
+              onChange={(e) => onSearchChange(e.target.value.slice(0, 80))}
               placeholder="Buscar termos no acervo (ex: RBAC, ABAC, PEP, NIST, QUIC, iptables, SoD)..."
               className={`w-full rounded-xl pl-10 pr-12 py-2 text-xs sm:text-sm border focus:outline-none transition ${
                 isLightMode

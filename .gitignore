@@ -1,8 +1,33 @@
+# Dependências e Builds
 node_modules/
 build/
 dist/
 coverage/
+
+# Arquivos de Sistema e Logs
 .DS_Store
+Thumbs.db
 *.log
-.env*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Segurança: Variáveis de Ambiente, Credenciais e Certificados
+.env
+.env.*
 !.env.example
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+secrets/
+*secret*
+
+# IDEs e Editores Locais
+.vscode/
+.idea/
+*.swp
+*.swo
+
