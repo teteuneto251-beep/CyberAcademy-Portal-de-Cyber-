@@ -89,7 +89,7 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({
               </a>
             </div>
             <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed pt-1">
-              Certifica-se a autoria do portal e conclusão com êxito da formação técnica avançada em <strong>Cybersecurity, Hardening de Redes, Arquitetura de Defesa e Governança IAM</strong>, fundamentada nos materiais didáticos e laboratórios elaborados pelo <strong>Prof. Rômulo Pereira de Almeida</strong> (100% dos 18 documentos concluídos).
+              Certifica-se a autoria do portal e conclusão com êxito da formação técnica avançada em <strong>Cybersecurity, Hardening de Redes, Arquitetura de Defesa e Governança IAM</strong>, fundamentada nos materiais didáticos e laboratórios elaborados pelo <strong>Prof. Rômulo Pereira de Almeida</strong> (100% dos 25 documentos e materiais técnicos homologados).
             </p>
           </div>
 

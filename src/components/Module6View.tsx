@@ -24,7 +24,8 @@ import {
   Laptop,
   FolderLock,
   Terminal,
-  FileCheck
+  FileCheck,
+  Network
 } from 'lucide-react';
 import {
   rbacMatrixOfficial,
@@ -34,6 +35,9 @@ import {
   TestCaseT,
   PracticeCase8
 } from '../data/modulesData';
+import { SSOView } from './iam/SSOView';
+import { NHIView } from './iam/NHIView';
+import { SecretsVaultView } from './iam/SecretsVaultView';
 
 interface Module6ViewProps {
   isLightMode?: boolean;
@@ -41,7 +45,9 @@ interface Module6ViewProps {
 
 export const Module6View: React.FC<Module6ViewProps> = ({ isLightMode = false }) => {
   // Main sub-tabs within Module 6
-  const [subTab, setSubTab] = useState<'fundamentos' | 'rbac' | 'abac' | 'arquitetura' | 'lab_h1' | 'pratica16'>('lab_h1');
+  const [subTab, setSubTab] = useState<
+    'fundamentos' | 'rbac' | 'abac' | 'arquitetura' | 'lab_h1' | 'pratica16' | 'sso' | 'nhi' | 'secrets'
+  >('lab_h1');
 
   // Interactive SoD role test state (from previous)
   const [selectedRole, setSelectedRole] = useState<'solicitante' | 'aprovador' | 'admin'>('solicitante');
@@ -254,20 +260,23 @@ export const Module6View: React.FC<Module6ViewProps> = ({ isLightMode = false })
       <div className="border-b border-slate-800 pb-5">
         <div className="flex items-center gap-2 text-rose-400 text-xs font-mono uppercase mb-1">
           <UserCheck className="w-4 h-4" />
-          <span>Módulo 06 • Documentos #09, #10, #11, #17 e #18 (Trilha Completa de IAM)</span>
+          <span>Módulo 06 • Documentos #09, #10, #11, #17 a #25 (Trilha Completa de IAM, SSO, NHI &amp; Cofres)</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-          IAM Blueprint: Modelando o Controle de Acesso com RBAC &amp; ABAC
+          IAM Blueprint: Autorização, Federação SSO, NHI &amp; Cofres de Segredos
         </h2>
         <p className="text-sm text-slate-400 mt-1">
-          Transformando necessidades de negócio em regras formais de autorização. Da Tríade da Identidade e MFA resistente a phishing até a arquitetura de decisão desacoplada (<strong>PEP / PDP / PIP / PAP</strong>) e o <strong>Modelo Híbrido H1</strong>.
+          Materiais didáticos oficiais do <strong>Prof. Rômulo Pereira de Almeida</strong>. Do modelo <strong>RBAC / ABAC</strong> e motor híbrido H1 à <strong>Federação SAML 2.0 / OIDC</strong>, <strong>Identidades Não Humanas (NHI)</strong> e <strong>Cofres de Segredos com Criptografia Envelope</strong>.
         </p>
       </div>
 
-      {/* Sub-navigation Tabs */}
-      <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3">
+      {/* Sub-navigation Tabs - Futuristic Segmented HUD */}
+      <div className="flex flex-wrap gap-2 border-b border-cyan-500/15 pb-3">
         {[
           { id: 'lab_h1', label: 'Laboratório: Motor Híbrido H1', icon: Cpu, badge: 'Interativo' },
+          { id: 'sso', label: 'Federação & SSO (Docs #19-#20)', icon: Network, badge: 'Novo' },
+          { id: 'nhi', label: 'Identidades Não Humanas (Docs #21-#23)', icon: Cpu, badge: 'Novo' },
+          { id: 'secrets', label: 'Cofres & Segredos (Docs #24-#25)', icon: Lock, badge: 'Novo' },
           { id: 'rbac', label: 'Modelagem RBAC & Matriz', icon: Layers },
           { id: 'abac', label: 'ABAC Dinâmico & Dicionário', icon: Sliders },
           { id: 'arquitetura', label: 'Arquitetura PEP/PDP/PIP/PAP', icon: GitBranch },
@@ -282,17 +291,17 @@ export const Module6View: React.FC<Module6ViewProps> = ({ isLightMode = false })
               onClick={() => setSubTab(tab.id as any)}
               className={`px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition cursor-pointer ${
                 isActive
-                  ? 'bg-rose-600 text-white shadow-lg shadow-rose-600/25'
+                  ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md shadow-cyan-600/25 border border-cyan-400/30'
                   : isLightMode
-                  ? 'bg-white border border-slate-300 text-slate-700 hover:text-slate-900 hover:bg-slate-50 shadow-xs'
-                  : 'bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-850'
+                  ? 'bg-white border border-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-50 shadow-xs'
+                  : 'bg-slate-900/60 border border-slate-800/80 text-slate-400 hover:text-cyan-300 hover:bg-slate-800/60'
               }`}
             >
-              <Icon className="w-4 h-4" />
+              <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-cyan-500'}`} />
               <span>{tab.label}</span>
               {tab.badge && (
-                <span className="px-1.5 py-0.5 rounded bg-amber-400 text-slate-950 font-bold text-[9px] uppercase font-mono">
-                  {tab.badge}
+                <span className="text-[10px] font-mono text-cyan-400 font-bold">
+                  · {tab.badge}
                 </span>
               )}
             </button>
@@ -1366,6 +1375,21 @@ export const Module6View: React.FC<Module6ViewProps> = ({ isLightMode = false })
           </div>
         </div>
       )}
+
+      {/* ========================================================================= */}
+      {/* ABA: FEDERAÇÃO & SINGLE SIGN-ON (DOCS #19 E #20)                          */}
+      {/* ========================================================================= */}
+      {subTab === 'sso' && <SSOView isLightMode={isLightMode} />}
+
+      {/* ========================================================================= */}
+      {/* ABA: IDENTIDADES NÃO HUMANAS (DOCS #21, #22 E #23)                        */}
+      {/* ========================================================================= */}
+      {subTab === 'nhi' && <NHIView isLightMode={isLightMode} />}
+
+      {/* ========================================================================= */}
+      {/* ABA: GESTÃO DE CREDENCIAIS & COFRES (DOCS #24 E #25)                      */}
+      {/* ========================================================================= */}
+      {subTab === 'secrets' && <SecretsVaultView isLightMode={isLightMode} />}
     </div>
   );
 };

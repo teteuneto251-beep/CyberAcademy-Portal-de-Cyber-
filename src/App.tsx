@@ -135,8 +135,8 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen flex flex-col transition-colors duration-200 selection:bg-red-600 selection:text-white ${
-        isLightMode ? 'bg-[#f8fafc] text-slate-800' : 'bg-[#060911] text-slate-100'
+      className={`min-h-screen flex flex-col cyber-grid-bg transition-colors duration-200 selection:bg-cyan-500 selection:text-black ${
+        isLightMode ? 'bg-[#f8fafc] text-slate-800' : 'bg-[#050811] text-slate-100'
       }`}
     >
       {/* Top Header */}
@@ -154,48 +154,49 @@ export default function App() {
         onToggleTheme={() => setIsLightMode((prev) => !prev)}
       />
 
-      {/* SOC Live Threat Ticker Banner */}
+      {/* SOC Live Threat Ticker Banner - Futuristic HUD Style */}
       <div
-        className={`border-b px-4 py-2 text-[11px] font-mono overflow-x-auto select-none transition-colors duration-200 ${
+        className={`border-b px-4 py-2 text-[11px] font-mono overflow-x-auto select-none backdrop-blur-md transition-colors duration-200 ${
           isLightMode
-            ? 'bg-white border-slate-200 text-slate-600'
-            : 'bg-slate-950/80 border-slate-800/80 text-slate-400'
+            ? 'bg-white/80 border-slate-200/90 text-slate-600'
+            : 'bg-[#070b18]/80 border-cyan-500/15 text-slate-400'
         }`}
       >
         <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-6 whitespace-nowrap">
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-bold">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-              SOC LIVE TELEMETRY:
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold tracking-wider text-[10px]">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              SOC TELEMETRY
             </span>
+            <span className={isLightMode ? 'text-slate-300' : 'text-slate-700'}>·</span>
             <span className={isLightMode ? 'text-slate-700' : 'text-slate-300'}>
               DEFCON 4 (Operacional)
             </span>
-            <span className={isLightMode ? 'text-slate-300' : 'text-slate-600'}>|</span>
+            <span className={isLightMode ? 'text-slate-300' : 'text-slate-700'}>·</span>
             <span>
               Framework:{' '}
-              <strong className={isLightMode ? 'text-cyan-700 font-bold' : 'text-cyan-400'}>
+              <strong className={isLightMode ? 'text-cyan-700 font-semibold' : 'text-cyan-300'}>
                 NIST CSF 2.0 (6 Funções)
               </strong>
             </span>
-            <span className={isLightMode ? 'text-slate-300' : 'text-slate-600'}>|</span>
+            <span className={isLightMode ? 'text-slate-300' : 'text-slate-700'}>·</span>
             <span>
               Firewall:{' '}
-              <strong className={isLightMode ? 'text-emerald-700 font-bold' : 'text-emerald-400'}>
+              <strong className={isLightMode ? 'text-emerald-700 font-semibold' : 'text-emerald-300'}>
                 NetSim Stateful (DROP Padrão)
               </strong>
             </span>
-            <span className={isLightMode ? 'text-slate-300' : 'text-slate-600'}>|</span>
+            <span className={isLightMode ? 'text-slate-300' : 'text-slate-700'}>·</span>
             <span>
               Autorização:{' '}
-              <strong className={isLightMode ? 'text-rose-700 font-bold' : 'text-rose-400'}>
+              <strong className={isLightMode ? 'text-rose-700 font-semibold' : 'text-rose-300'}>
                 H1 Híbrido (PEP/PDP/PIP)
               </strong>
             </span>
-            <span className={isLightMode ? 'text-slate-300' : 'text-slate-600'}>|</span>
+            <span className={isLightMode ? 'text-slate-300' : 'text-slate-700'}>·</span>
             <span>
               Protocolos:{' '}
-              <strong className={isLightMode ? 'text-purple-700 font-bold' : 'text-purple-400'}>
+              <strong className={isLightMode ? 'text-purple-700 font-semibold' : 'text-purple-300'}>
                 QUIC (HTTP/3 UDP 443) &amp; ICMPv6 NDP
               </strong>
             </span>
@@ -204,14 +205,14 @@ export default function App() {
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={() => setIsGlossaryOpen(true)}
-              className="text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1 cursor-pointer transition"
+              className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 flex items-center gap-1 cursor-pointer transition text-xs"
             >
               <BookMarked className="w-3.5 h-3.5" /> Glossário de Siglas
             </button>
-            <span className={isLightMode ? 'text-slate-300' : 'text-slate-700'}>•</span>
+            <span className={isLightMode ? 'text-slate-300' : 'text-slate-700'}>·</span>
             <button
               onClick={() => setIsCertificateOpen(true)}
-              className="text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1 cursor-pointer transition"
+              className="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 flex items-center gap-1 cursor-pointer transition text-xs"
             >
               <Award className="w-3.5 h-3.5" /> Certificado Homologado
             </button>
@@ -391,6 +392,7 @@ export default function App() {
         isOpen={isAcervoOpen}
         onClose={() => setIsAcervoOpen(false)}
         onSelectDocModule={(mod) => handleTabChange(mod)}
+        isLightMode={isLightMode}
       />
 
       {/* Technical Glossary Modal */}

@@ -41,10 +41,10 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header
-      className={`sticky top-0 z-50 backdrop-blur-md border-b transition-colors duration-200 ${
+      className={`sticky top-0 z-50 backdrop-blur-xl border-b transition-colors duration-200 ${
         isLightMode
-          ? 'bg-white/95 border-slate-200 shadow-sm text-slate-800'
-          : 'bg-slate-950/90 border-slate-800/80 text-white'
+          ? 'bg-white/90 border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.04)] text-slate-800'
+          : 'bg-[#050811]/90 border-cyan-500/20 shadow-[0_4px_30px_-4px_rgba(0,0,0,0.8)] text-white'
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
@@ -53,21 +53,23 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onToggleSidebar}
             aria-label="Abrir menu de navegação"
-            className={`lg:hidden p-2.5 rounded-xl border transition cursor-pointer ${
+            className={`lg:hidden p-2 rounded-xl border transition cursor-pointer ${
               isLightMode
-                ? 'bg-slate-100 border-slate-200 text-slate-700 hover:text-black'
-                : 'bg-slate-900 border-slate-800 text-slate-300 hover:text-white'
+                ? 'bg-slate-100/90 border-slate-200 text-slate-700 hover:text-black'
+                : 'bg-slate-900/90 border-slate-800 text-slate-300 hover:text-white'
             }`}
           >
             <Menu className="w-5 h-5" />
           </button>
 
           <div
-            className="flex items-center gap-3 cursor-pointer select-none"
+            className="flex items-center gap-3 cursor-pointer select-none group"
             onClick={() => onSelectTab('dashboard')}
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-rose-700 flex items-center justify-center shadow-lg shadow-red-600/25 border border-red-400/30">
-              <ShieldCheck className="w-6 h-6 text-white keep-white" />
+            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700 p-0.5 shadow-lg shadow-cyan-500/20 transition-transform group-hover:scale-105">
+              <div className="w-full h-full rounded-[10px] bg-slate-950 flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition" />
+              </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -78,25 +80,27 @@ export const Header: React.FC<HeaderProps> = ({
                 >
                   Engenharia &amp; Defesa Cibernética
                 </span>
-                <span className="text-[11px] font-mono uppercase px-2 py-0.5 rounded-md bg-red-500/15 text-red-700 dark:text-red-400 border border-red-500/30 font-semibold">
-                  NIST CSF 2.0 • SOC
+                <span className="hidden sm:inline text-[10px] font-mono text-cyan-600 dark:text-cyan-400 font-semibold tracking-wider">
+                  NIST CSF 2.0 · SOC
                 </span>
               </div>
               <p
-                className={`text-[11px] hidden sm:block ${
+                className={`text-[11px] hidden sm:flex items-center gap-1.5 ${
                   isLightMode ? 'text-slate-600' : 'text-slate-400'
                 }`}
               >
-                Material: <strong className={isLightMode ? 'text-slate-900' : 'text-slate-200'}>Prof. Rômulo Pereira de Almeida</strong> • Autor do Portal: <strong className={isLightMode ? 'text-slate-900' : 'text-slate-200'}>José Matheus dos Santos Neto</strong>
+                <span>Material: <strong className={isLightMode ? 'text-slate-900' : 'text-slate-200'}>Prof. Rômulo Pereira de Almeida</strong></span>
+                <span className={isLightMode ? 'text-slate-300' : 'text-slate-700'}>·</span>
+                <span>Autor: <strong className={isLightMode ? 'text-slate-900' : 'text-slate-200'}>José Matheus dos Santos Neto</strong></span>
               </p>
             </div>
           </div>
         </div>
 
-        {/* Global Search Bar */}
+        {/* Global Search Bar - Clean Futuristic HUD Input */}
         <div className="flex-1 max-w-md hidden md:block">
-          <div className="relative">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+          <div className="relative group">
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-cyan-500 transition" />
             <input
               id="global-search"
               type="text"
@@ -105,11 +109,11 @@ export const Header: React.FC<HeaderProps> = ({
               spellCheck={false}
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value.slice(0, 80))}
-              placeholder="Buscar termos no acervo (ex: RBAC, ABAC, PEP, NIST, QUIC, iptables, SoD)..."
+              placeholder="Buscar no acervo (RBAC, ABAC, PEP, NIST, QUIC, iptables, SoD)..."
               className={`w-full rounded-xl pl-10 pr-12 py-2 text-xs sm:text-sm border focus:outline-none transition ${
                 isLightMode
-                  ? 'bg-slate-100/90 border-slate-200 text-slate-800 placeholder-slate-400 focus:border-red-500 focus:bg-white'
-                  : 'bg-slate-900/90 border-slate-800 text-slate-200 placeholder-slate-500 focus:border-red-500/60'
+                  ? 'bg-slate-50/80 border-slate-200 text-slate-800 placeholder-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-1 focus:ring-cyan-500/20'
+                  : 'bg-slate-900/60 border-slate-800/80 text-slate-200 placeholder-slate-500 focus:border-cyan-500/60 focus:bg-slate-900/90 focus:ring-1 focus:ring-cyan-500/30'
               }`}
             />
             {searchQuery ? (
@@ -124,7 +128,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className={`absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[10px] font-mono border rounded select-none pointer-events-none ${
                   isLightMode
                     ? 'text-slate-500 bg-white border-slate-200'
-                    : 'text-slate-500 bg-slate-800 border-slate-700'
+                    : 'text-slate-400 bg-slate-800/80 border-slate-700'
                 }`}
               >
                 ⌘K
@@ -142,7 +146,7 @@ export const Header: React.FC<HeaderProps> = ({
               className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer ${
                 isLightMode
                   ? 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-700'
-                  : 'bg-slate-900 hover:bg-slate-800 border-slate-700 text-amber-400'
+                  : 'bg-slate-900/80 hover:bg-slate-800 border-slate-700/80 text-amber-400'
               }`}
               title={isLightMode ? 'Alternar para Modo Escuro' : 'Alternar para Modo Branco'}
               aria-label="Alternar tema de cores"
@@ -168,13 +172,13 @@ export const Header: React.FC<HeaderProps> = ({
           <div
             className={`hidden lg:flex items-center gap-2 border px-3 py-1.5 rounded-xl text-[11px] font-mono ${
               isLightMode
-                ? 'bg-slate-50 border-slate-200'
-                : 'bg-slate-900/80 border-slate-800'
+                ? 'bg-slate-50 border-slate-200 text-slate-600'
+                : 'bg-slate-900/60 border-cyan-500/20 text-slate-400'
             }`}
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className={isLightMode ? 'text-slate-500' : 'text-slate-400'}>SOC:</span>
-            <span className="text-emerald-500 font-semibold">ATIVO</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+            <span>SOC:</span>
+            <span className="text-emerald-500 dark:text-emerald-400 font-semibold">ATIVO</span>
           </div>
 
           <a
@@ -183,8 +187,8 @@ export const Header: React.FC<HeaderProps> = ({
             rel="noopener noreferrer"
             className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer ${
               isLightMode
-                ? 'bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-800'
-                : 'bg-blue-950/50 hover:bg-blue-900/60 border-blue-700/60 text-blue-300 hover:text-white'
+                ? 'bg-blue-50/80 hover:bg-blue-100 border-blue-200 text-blue-800'
+                : 'bg-blue-950/40 hover:bg-blue-900/60 border-blue-700/50 text-blue-300 hover:text-white'
             }`}
             title="LinkedIn: José Matheus dos Santos Neto"
           >
@@ -197,7 +201,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer ${
               isLightMode
                 ? 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-700'
-                : 'bg-slate-900 hover:bg-slate-800 border-slate-700 text-slate-300 hover:text-white'
+                : 'bg-slate-900/70 hover:bg-slate-800 border-slate-700/80 text-slate-300 hover:text-white'
             }`}
             title="Glossário Técnico"
           >
@@ -210,7 +214,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer ${
               isLightMode
                 ? 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-700'
-                : 'bg-slate-900 hover:bg-slate-800 border-slate-700 text-slate-300 hover:text-white'
+                : 'bg-slate-900/70 hover:bg-slate-800 border-slate-700/80 text-slate-300 hover:text-white'
             }`}
             title="Certificado de Conclusão"
           >
@@ -223,11 +227,11 @@ export const Header: React.FC<HeaderProps> = ({
             className={`px-3.5 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-2 transition cursor-pointer ${
               isLightMode
                 ? 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-800'
-                : 'bg-slate-900 hover:bg-slate-800 border-slate-700 text-slate-200'
+                : 'bg-slate-900/80 hover:bg-slate-800 border-cyan-500/30 text-cyan-300 shadow-[0_0_12px_rgba(6,182,212,0.15)]'
             }`}
           >
-            <BookOpen className="w-4 h-4 text-red-500" />
-            <span className="hidden sm:inline">{completedDocsCount} Docs</span>
+            <BookOpen className="w-4 h-4 text-cyan-500" />
+            <span className="hidden sm:inline font-mono">{completedDocsCount} Docs</span>
           </button>
         </div>
       </div>

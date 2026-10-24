@@ -1,14 +1,18 @@
 export interface TechDoc {
   num: string;
   titulo: string;
+  subtitulo?: string;
   categoria: 'Apostila' | 'Guia Prático' | 'Diagnóstico / Risco' | 'Relatório de Lab';
   autor: string;
   modulo: 'mod1' | 'mod2' | 'mod3' | 'mod4' | 'mod5' | 'mod6';
   resumo: string;
   tags: string[];
+  pdfUrl?: string;
+  paginas?: string;
+  dataPublicacao?: string;
 }
 
-export const acervo16Docs: TechDoc[] = [
+export const acervo25Docs: TechDoc[] = [
   {
     num: "01",
     titulo: "Guia de Aula: Introdução à Cybersecurity, Panorama e Carreiras Corporativas",
@@ -170,8 +174,98 @@ export const acervo16Docs: TechDoc[] = [
     modulo: "mod6",
     resumo: "Metodologia de 8 etapas, Dicionário de Atributos, Sintaxe da Regra A1, Matriz de Testes T1-T10, Regra de Ouro (Ausente != Permitido) e Resolução de Conflitos.",
     tags: ["RBAC", "ABAC", "Dicionário", "Matriz de Testes", "Horizonte", "NIST SP 800-205"]
+  },
+  {
+    num: "19",
+    titulo: "Material Didático: Federação e Single Sign-On (SSO)",
+    subtitulo: "Identity and Access Management (IAM) - Material Didático do Aluno",
+    categoria: "Apostila",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod6",
+    resumo: "Fundamentos de Federação e SSO, Provedores de Identidade (IdP) vs Provedores de Serviço (SP), Trust Relationships, Protocolo SAML 2.0 (Assertions, Bindings, Metadados XML), OpenID Connect (OIDC) e OAuth 2.0 (Tokens JWT, UserInfo, Discovery Endpoint), Provisionamento Automático com SCIM 2.0 e Gestão de Sessões Globais (SLO).",
+    tags: ["IAM", "Federação", "SSO", "SAML 2.0", "OIDC", "SCIM", "IdP", "SP", "Tokens JWT"],
+    pdfUrl: "/assets/aistudio/Material_Didatico_IAM_Federacao_SSO_JJ_eb59222b.pdf",
+    paginas: "27 páginas (Carga Horária: 40h)",
+    dataPublicacao: "22 de Outubro de 2026"
+  },
+  {
+    num: "20",
+    titulo: "Blueprint de Federação e SSO: O Blueprint de Identidade",
+    subtitulo: "Arquitetura, Protocolos e Operações em Access Management (IAM)",
+    categoria: "Guia Prático",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod6",
+    resumo: "Blueprint visual de arquitetura de SSO: fluxos SP-Initiated vs IdP-Initiated, asserções assinadas digitalmente (XML DSig), políticas de Acesso Condicional adaptativo, federação multinuvem e interoperabilidade com FIDO2 / WebAuthn.",
+    tags: ["Blueprint", "SSO", "SAML", "OIDC", "Acesso Condicional", "FIDO2", "Arquitetura"],
+    pdfUrl: "/assets/aistudio/Blueprint_de_Federa__o_e_SSO_0396ad34.pdf",
+    paginas: "15 slides executivos",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "21",
+    titulo: "Material Didático: Identidades Não Humanas (Serviços, Chaves e Tokens)",
+    subtitulo: "Identity and Access Management (IAM) - Material Didático do Aluno",
+    categoria: "Apostila",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod6",
+    resumo: "Gestão abrangente de Identidades Não Humanas (NHI): contas de serviço, chaves de API, tokens OAuth/PAT, pipelines CI/CD, Workload Identity Federation (WIF) para eliminação de credenciais estáticas, monitoramento de segredos hardcoded e auditoria de tráfego Machine-to-Machine.",
+    tags: ["NHI", "Service Accounts", "Workload Identity", "Tokens", "API Keys", "CI/CD", "Machine-to-Machine"],
+    pdfUrl: "/assets/aistudio/Material_Didatico_IAM_Identidades_Nao_Humanas_JJ_c94eac27.pdf",
+    paginas: "27 páginas (Carga Horária: 40h)",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "22",
+    titulo: "Blueprint de Identidades Não Humanas (NHI): Guia Operacional e Arquitetural",
+    subtitulo: "Serviços, Chaves e Tokens - Do Inventário à Automação de Governança",
+    categoria: "Guia Prático",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod6",
+    resumo: "Blueprint visual com topologia de Workload Identity Federation, esteira de detecção de segredos em código-fonte (Git hooks, scanners SAST), arquitetura de menor privilégio para microsserviços e matriz de ciclo de vida NHI.",
+    tags: ["Blueprint", "NHI", "WIF", "DevSecOps", "Zero Static Secrets", "Governança"],
+    pdfUrl: "/assets/aistudio/Blueprint_de_Identidades_N_o_Humanas__1__ff4d6dd2.pdf",
+    paginas: "15 slides executivos",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "23",
+    titulo: "Identidades Não Humanas (NHI): Casos Práticos e Resoluções",
+    subtitulo: "Um guia de arquitetura focando nas microtarefas de descoberta, limites, criptografia, nuvem e ciclo de vida",
+    categoria: "Guia Prático",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod6",
+    resumo: "Resolução técnica de 5 microtarefas práticas de NHI: Descoberta de credenciais órfãs, delimitação de escopo e blast radius, criptografia de dados em trânsito e repouso, integração multinuvem e automação do ciclo de vida com rotação programada.",
+    tags: ["NHI", "Casos Práticos", "Blast Radius", "Criptografia", "Multinuvem", "Ciclo de Vida"],
+    pdfUrl: "/assets/aistudio/organized_fac73fe4.pdf",
+    paginas: "25 slides de casos práticos",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "24",
+    titulo: "Material Didático: Gestão de Credenciais e Cofres de Segredos",
+    subtitulo: "Identity and Access Management (IAM) - Material Didático do Aluno",
+    categoria: "Apostila",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod6",
+    resumo: "Fundamentos e implementação de Secrets Management: Cofres de segredos (HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, Google Cloud Secret Manager), Dynamic Secrets (credenciais efêmeras), Criptografia Envelope (DEK - Data Encryption Key / KEK - Key Encryption Key), Rotação automatizada sem indisponibilidade (Zero-Downtime) e auditoria de acesso a segredos.",
+    tags: ["Cofres de Segredos", "HashiCorp Vault", "AWS Secrets Manager", "Envelope Encryption", "DEK/KEK", "Zero-Downtime", "Rotação"],
+    pdfUrl: "/assets/aistudio/Material_Didatico_IAM_Gestao_Credenciais_Cofres_Segredos_JJ_9d93122d.pdf",
+    paginas: "31 páginas (Carga Horária: 40h)",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "25",
+    titulo: "Gestão de Credenciais e Cofres de Segredos: Arquitetura e Defesa em Profundidade",
+    subtitulo: "IAM para Workloads e Identidades Não Humanas [Arquitetura, Ciclo de Vida e Defesa em Profundidade]",
+    categoria: "Guia Prático",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod6",
+    resumo: "Guia arquitetural de implementação de cofres de segredos corporativos, Just-In-Time (JIT) access para microsserviços, estratégia de contenção contra vazamento de credenciais e compliance com NIST SP 800-57 e CIS Benchmarks.",
+    tags: ["Blueprint", "Secrets Vault", "Just-In-Time", "Defesa em Profundidade", "NIST SP 800-57", "CIS"],
+    pdfUrl: "/assets/aistudio/Gest_o_de_Credenciais_e_Segredos_7539a3c4.pdf",
+    paginas: "15 slides executivos",
+    dataPublicacao: "Outubro de 2026"
   }
 ];
 
-export const acervoDocs = acervo16Docs;
-
+export const acervoDocs = acervo25Docs;
