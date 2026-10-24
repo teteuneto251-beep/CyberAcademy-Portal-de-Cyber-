@@ -154,7 +154,7 @@ export const SSOView: React.FC<SSOViewProps> = ({ isLightMode = false }) => {
 
   return (
     <div className="space-y-6">
-      {/* Official Docs Banner */}
+      {/* Official Docs Banner with Federation Image */}
       <div
         className={`p-6 rounded-2xl border shadow-lg transition-colors ${
           isLightMode
@@ -162,9 +162,9 @@ export const SSOView: React.FC<SSOViewProps> = ({ isLightMode = false }) => {
             : 'bg-gradient-to-r from-blue-950/40 via-slate-900 to-cyan-950/30 border-blue-900/60'
         }`}
       >
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="space-y-2 max-w-2xl">
+            <div className="flex items-center gap-2">
               <span className="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-700 dark:text-blue-300 font-mono text-xs font-bold border border-blue-500/30">
                 DOCUMENTOS OFICIAIS #19 E #20
               </span>
@@ -173,43 +173,58 @@ export const SSOView: React.FC<SSOViewProps> = ({ isLightMode = false }) => {
               </span>
             </div>
             <h3
-              className={`text-xl font-extrabold ${
+              className={`text-xl sm:text-2xl font-extrabold ${
                 isLightMode ? 'text-slate-900' : 'text-white'
               }`}
             >
               Federação de Identidades, Single Sign-On (SSO) &amp; SCIM
             </h3>
             <p
-              className={`text-xs sm:text-sm mt-1 max-w-3xl leading-relaxed ${
+              className={`text-xs sm:text-sm leading-relaxed ${
                 isLightMode ? 'text-slate-600' : 'text-slate-300'
               }`}
             >
               Material didático oficial elaborado pelo{' '}
               <strong>Prof. Rômulo Pereira de Almeida</strong>. Compreende os fundamentos de federação corporativa, arquitetura IdP vs SP, tokens JWT, asserções XML DSig, SCIM 2.0 e Single Log-Out (SLO).
             </p>
+
+            <div className="flex flex-wrap items-center gap-2 pt-2">
+              <a
+                href="/assets/aistudio/Material_Didatico_IAM_Federacao_SSO_JJ_eb59222b.pdf"
+                download
+                className="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs flex items-center gap-1.5 transition shadow"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Baixar Apostila (27p)</span>
+              </a>
+              <a
+                href="/assets/aistudio/Blueprint_de_Federa__o_e_SSO_0396ad34.pdf"
+                download
+                className={`px-3.5 py-2 rounded-xl border font-semibold text-xs flex items-center gap-1.5 transition ${
+                  isLightMode
+                    ? 'bg-white hover:bg-slate-100 border-slate-300 text-slate-800'
+                    : 'bg-slate-850 hover:bg-slate-800 border-slate-700 text-slate-200'
+                }`}
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Baixar Blueprint (15s)</span>
+              </a>
+            </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 shrink-0">
-            <a
-              href="/assets/aistudio/Material_Didatico_IAM_Federacao_SSO_JJ_eb59222b.pdf"
-              download
-              className="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs flex items-center gap-1.5 transition shadow"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>Baixar Apostila (27p)</span>
-            </a>
-            <a
-              href="/assets/aistudio/Blueprint_de_Federa__o_e_SSO_0396ad34.pdf"
-              download
-              className={`px-3.5 py-2 rounded-xl border font-semibold text-xs flex items-center gap-1.5 transition ${
-                isLightMode
-                  ? 'bg-white hover:bg-slate-100 border-slate-300 text-slate-800'
-                  : 'bg-slate-850 hover:bg-slate-800 border-slate-700 text-slate-200'
-              }`}
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>Baixar Blueprint (15s)</span>
-            </a>
+          <div className="shrink-0 w-full lg:w-56 h-36 rounded-xl overflow-hidden border border-blue-500/30 shadow-md relative group cyber-img-box">
+            <img
+              src="/assets/aistudio/Digital_identity_federation_arch__20261024192228_da215ae9.jpg"
+              alt="Digital identity federation architecture SAML and OIDC"
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              loading="lazy"
+            />
+            <div className="cyber-img-overlay" />
+            <span className={`absolute bottom-2 left-2 text-[10px] font-mono font-bold px-2 py-0.5 rounded backdrop-blur-md border ${
+              isLightMode ? 'bg-white/90 text-blue-900 border-blue-200' : 'bg-slate-950/80 text-cyan-300 border-cyan-500/30'
+            }`}>
+              SAML 2.0 · OIDC · SCIM
+            </span>
           </div>
         </div>
       </div>

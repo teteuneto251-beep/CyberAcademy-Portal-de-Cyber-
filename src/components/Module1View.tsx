@@ -66,7 +66,11 @@ const ciaScenariosData: CiaScenario[] = [
   }
 ];
 
-export const Module1View: React.FC = () => {
+interface Module1ViewProps {
+  isLightMode?: boolean;
+}
+
+export const Module1View: React.FC<Module1ViewProps> = ({ isLightMode = false }) => {
   const [selectedCareer, setSelectedCareer] = useState<Career>(careersData[0]);
   const [ciaAnswers, setCiaAnswers] = useState<Record<number, 'C' | 'I' | 'A'>>({});
 
@@ -88,18 +92,40 @@ export const Module1View: React.FC = () => {
 
   return (
     <div className="space-y-8 animate-fadeIn">
-      {/* Module Header */}
-      <div className="border-b border-slate-800 pb-5">
-        <div className="flex items-center gap-2 text-blue-400 text-xs font-mono uppercase mb-1">
-          <Compass className="w-4 h-4" />
-          <span>Módulo 01 • Documentos #01 e #02</span>
+      {/* Module Header with Image Showcase */}
+      <div
+        className={`relative rounded-2xl overflow-hidden border p-6 flex flex-col md:flex-row items-center justify-between gap-6 transition ${
+          isLightMode
+            ? 'bg-gradient-to-r from-blue-50/90 via-white to-cyan-50/70 border-blue-200 shadow-sm'
+            : 'bg-gradient-to-r from-blue-950/40 via-slate-900 to-indigo-950/30 border-blue-500/25 shadow-lg'
+        }`}
+      >
+        <div className="space-y-2 max-w-2xl">
+          <div className="flex items-center gap-2 text-blue-500 dark:text-blue-400 text-xs font-mono uppercase">
+            <Compass className="w-4 h-4" />
+            <span>Módulo 01 • Documentos #01 e #02</span>
+          </div>
+          <h2 className={`text-2xl sm:text-3xl font-extrabold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+            Introdução à Cybersecurity, Carreiras &amp; Ambientes Corporativos
+          </h2>
+          <p className={`text-sm ${isLightMode ? 'text-slate-600' : 'text-slate-300'}`}>
+            Material didático do <strong>Prof. Rômulo Pereira de Almeida</strong> consolidando os guias fundamentais: <em>Panorama e Carreiras</em> e <em>Ambientes Corporativos (Caso Horizonte Serviços)</em>.
+          </p>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-          Introdução à Cybersecurity, Carreiras &amp; Ambientes Corporativos
-        </h2>
-        <p className="text-sm text-slate-400 mt-1">
-          Baseado nos guias técnicos fundamentais: <em>Introdução à Cybersecurity: Panorama e Carreiras</em> e <em>Fundamentos de Ambientes Corporativos (Caso Horizonte Serviços)</em>.
-        </p>
+        <div className="shrink-0 w-full md:w-56 h-36 rounded-xl overflow-hidden border border-blue-500/30 shadow-md relative group cyber-img-box">
+          <img
+            src="/assets/aistudio/Cybersecurity_shield_emblem_bann__20261024192254_8674da8a.jpg"
+            alt="Cybersecurity Shield Emblem"
+            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            loading="lazy"
+          />
+          <div className="cyber-img-overlay" />
+          <span className={`absolute bottom-2 left-2 text-[10px] font-mono font-bold px-2 py-0.5 rounded backdrop-blur-md border ${
+            isLightMode ? 'bg-white/90 text-blue-900 border-blue-200' : 'bg-slate-950/80 text-cyan-300 border-cyan-500/30'
+          }`}>
+            Tríade CIA &amp; Fundamentos
+          </span>
+        </div>
       </div>
 
       {/* Tríade CIA */}

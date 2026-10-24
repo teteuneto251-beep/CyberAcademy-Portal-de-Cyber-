@@ -199,16 +199,47 @@ html.light .text-slate-600 {
   color: #475569 !important;
 }
 
+/* Overlay sutil para imagens: NUNCA coberto por fundo branco opaco */
+.cyber-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 60%) !important;
+  pointer-events: none;
+}
+
+html.light .cyber-img-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 60%) !important;
+  background-color: transparent !important;
+}
+
+.cyber-img-box {
+  background-color: #0b1120 !important;
+}
+
+html.light .cyber-img-box {
+  background-color: #f1f5f9 !important;
+}
+
+/* Imagens sempre visíveis e opacas */
+img {
+  display: block;
+}
+
+html.light img {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /* Cartões com gradientes escuros invertem para superfícies claras elegantes no modo branco */
-html.light [class*="from-slate-950"],
-html.light [class*="from-slate-900"],
-html.light [class*="via-slate-900"],
-html.light [class*="to-slate-950"],
-html.light [class*="to-blue-950"],
-html.light [class*="to-red-950"],
-html.light [class*="to-rose-950"],
-html.light [class*="to-amber-950"],
-html.light [class*="to-purple-950"] {
+html.light [class*="from-slate-950"]:not(.cyber-img-overlay):not(.cyber-img-box):not(img),
+html.light [class*="from-slate-900"]:not(.cyber-img-overlay):not(.cyber-img-box):not(img),
+html.light [class*="via-slate-900"]:not(.cyber-img-overlay):not(.cyber-img-box):not(img),
+html.light [class*="to-slate-950"]:not(.cyber-img-overlay):not(.cyber-img-box):not(img),
+html.light [class*="to-blue-950"]:not(.cyber-img-overlay):not(.cyber-img-box):not(img),
+html.light [class*="to-red-950"]:not(.cyber-img-overlay):not(.cyber-img-box):not(img),
+html.light [class*="to-rose-950"]:not(.cyber-img-overlay):not(.cyber-img-box):not(img),
+html.light [class*="to-amber-950"]:not(.cyber-img-overlay):not(.cyber-img-box):not(img),
+html.light [class*="to-purple-950"]:not(.cyber-img-overlay):not(.cyber-img-box):not(img) {
   background-image: none !important;
   background-color: #ffffff !important;
   color: #0f172a !important;

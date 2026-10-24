@@ -15,7 +15,11 @@ import {
 } from 'lucide-react';
 import { nistFunctionsData } from '../data/modulesData';
 
-export const Module2View: React.FC = () => {
+interface Module2ViewProps {
+  isLightMode?: boolean;
+}
+
+export const Module2View: React.FC<Module2ViewProps> = ({ isLightMode = false }) => {
   // Simulator State for ALT-042
   const [revokedTokens, setRevokedTokens] = useState(false);
   const [accountSuspended, setAccountSuspended] = useState(false);
@@ -36,18 +40,40 @@ export const Module2View: React.FC = () => {
 
   return (
     <div className="space-y-8 animate-fadeIn">
-      {/* Module Header */}
-      <div className="border-b border-slate-800 pb-5">
-        <div className="flex items-center gap-2 text-cyan-400 text-xs font-mono uppercase mb-1">
-          <ShieldAlert className="w-4 h-4" />
-          <span>Módulo 02 • Documento #03 (4 - introducao_ciclo_defesa_alunos.pdf)</span>
+      {/* Module Header with SOC Image Showcase */}
+      <div
+        className={`relative rounded-2xl overflow-hidden border p-6 flex flex-col md:flex-row items-center justify-between gap-6 transition ${
+          isLightMode
+            ? 'bg-gradient-to-r from-cyan-50/90 via-white to-blue-50/70 border-cyan-200 shadow-sm'
+            : 'bg-gradient-to-r from-cyan-950/40 via-slate-900 to-blue-950/30 border-cyan-500/25 shadow-lg'
+        }`}
+      >
+        <div className="space-y-2 max-w-2xl">
+          <div className="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 text-xs font-mono uppercase">
+            <ShieldAlert className="w-4 h-4" />
+            <span>Módulo 02 • Documento #03 (4 - introducao_ciclo_defesa_alunos.pdf)</span>
+          </div>
+          <h2 className={`text-2xl sm:text-3xl font-extrabold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+            Introdução ao Ciclo de Defesa, SOC &amp; NIST CSF 2.0
+          </h2>
+          <p className={`text-sm ${isLightMode ? 'text-slate-600' : 'text-slate-300'}`}>
+            Material do <strong>Prof. Rômulo Pereira de Almeida</strong> embasado no <strong>NIST CSF 2.0 (2024)</strong> e <strong>NIST SP 800-61 Rev. 3 (2025)</strong>: <em>prevenir não basta; é imperativo saber observar, investigar, conter, erradicar e recuperar</em>.
+          </p>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-          Introdução ao Ciclo de Defesa, SOC &amp; NIST CSF 2.0
-        </h2>
-        <p className="text-sm text-slate-400 mt-1">
-          Base conceitual: <strong>NIST CSF 2.0 (2024)</strong> e <strong>NIST SP 800-61 Rev. 3 (2025)</strong>. A premissa indispensável: <em>prevenir não basta; é imperativo saber observar, investigar, conter, erradicar e recuperar</em>.
-        </p>
+        <div className="shrink-0 w-full md:w-56 h-36 rounded-xl overflow-hidden border border-cyan-500/30 shadow-md relative group cyber-img-box">
+          <img
+            src="/assets/aistudio/Cybersecurity_engineer_analyzing__20261024192147_fe89649e.jpg"
+            alt="Cybersecurity Engineer SOC Telemetry"
+            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            loading="lazy"
+          />
+          <div className="cyber-img-overlay" />
+          <span className={`absolute bottom-2 left-2 text-[10px] font-mono font-bold px-2 py-0.5 rounded backdrop-blur-md border ${
+            isLightMode ? 'bg-white/90 text-cyan-900 border-cyan-200' : 'bg-slate-950/80 text-cyan-300 border-cyan-500/30'
+          }`}>
+            Blue Team · Operações SOC
+          </span>
+        </div>
       </div>
 
       {/* As 6 Funções do NIST CSF 2.0 */}

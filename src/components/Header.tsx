@@ -10,7 +10,8 @@ import {
   Sun,
   Moon,
   Linkedin,
-  Calendar
+  Calendar,
+  Sparkles
 } from 'lucide-react';
 
 interface HeaderProps {

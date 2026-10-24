@@ -313,9 +313,9 @@ export default function App() {
             />
           )}
 
-          {currentTab === 'mod1' && <Module1View />}
-          {currentTab === 'mod2' && <Module2View />}
-          {currentTab === 'mod3' && <Module3View />}
+          {currentTab === 'mod1' && <Module1View isLightMode={isLightMode} />}
+          {currentTab === 'mod2' && <Module2View isLightMode={isLightMode} />}
+          {currentTab === 'mod3' && <Module3View isLightMode={isLightMode} />}
           {currentTab === 'mod4' && (
             <Module4View
               isLightMode={isLightMode}

@@ -22,7 +22,8 @@ import {
   Linkedin,
   Calendar,
   ExternalLink,
-  User
+  User,
+  Sparkles
 } from 'lucide-react';
 import { SecurityRadarChart } from './SecurityRadarChart';
 
@@ -46,6 +47,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       docs: 'Docs #01 e #02',
       title: 'Panorama, Carreiras & Ambientes Corporativos',
       badgeColor: 'bg-blue-500/15 text-blue-400',
+      image: '/assets/aistudio/Cybersecurity_shield_emblem_bann__20261024192254_8674da8a.jpg',
       description:
         'Tríade CIA (Confidencialidade, Integridade, Disponibilidade), Estudo de Caso real AWS no Oriente Médio, Mapeamento das 8 Carreiras de Segurança e as 4 Camadas de Dependências do Caso Horizonte Serviços.',
       actionText: 'Acessar Fundamentos & Carreiras',
@@ -58,6 +60,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       docs: 'Doc #03',
       title: 'Ciclo de Defesa & NIST CSF 2.0',
       badgeColor: 'bg-cyan-500/15 text-cyan-400',
+      image: '/assets/aistudio/Cybersecurity_engineer_analyzing__20261024192147_fe89649e.jpg',
       description:
         'As 6 funções estratégicas do NIST CSF 2.0 (Govern, Identify, Protect, Detect, Respond, Recover), atuação do Blue Team e SOC, correlação de logs e laboratório interativo de triagem do Alerta ALT-042.',
       actionText: 'Acessar Módulo + Simulador ALT-042',
@@ -70,6 +73,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       docs: 'Docs #04, #12 e #13',
       title: 'Diagnóstico de Riscos — Caso Aurora Distribuição',
       badgeColor: 'bg-amber-500/15 text-amber-400',
+      image: '/assets/aistudio/Corporate_risk_management_execut__20261024192245_dfa047d3.jpg',
       description:
         'Estudo de caso completo (C01 a C10), inventário de 8 ativos críticos, 5 cenários de risco mapeados, cálculo de Risco Inerente vs Residual (5x5), metas de RTO (4h), RPO (1h) e gestão de terceiros (NexoTI).',
       actionText: 'Ver Workbook & Matriz de Riscos',
@@ -82,6 +86,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       docs: 'Docs #05, #14 e #15',
       title: 'Redes, TCP/IP, IP Scanner & Wireshark',
       badgeColor: 'bg-purple-500/15 text-purple-400',
+      image: '/assets/aistudio/Data_packets_traveling_across_ne__20261024192207_422b4094.jpg',
       description:
         'Modelo OSI vs TCP/IP, Three-Way Handshake TCP, DNS, HTTP/3 sobre QUIC (UDP 443, TLS 1.3, KP0), ICMPv6 Neighbor Discovery (NDP) e dissecação interativa de pacotes capturados.',
       actionText: 'Explorar Dissecador Wireshark',
@@ -94,6 +99,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       docs: 'Docs #06, #07, #08 e #16',
       title: 'Hardening de Rede, Firewalls & Simulador NetSim',
       badgeColor: 'bg-emerald-500/15 text-emerald-400',
+      image: '/assets/aistudio/Corporate_network_fortress_archi__20261024192219_6ed44814.jpg',
       description:
         'Lab 5 oficial (Harden a vulnerable network) e Topologia de 3 Zonas construída do zero (Usuários .10, Servidores .20, Visitantes .30). Regras iptables stateful conntrack, IDS/IPS e VPN corporativa.',
       actionText: 'Testar Terminal NetSim Interativo',
@@ -106,6 +112,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       docs: 'Docs #09, #10, #11, #17 a #25',
       title: 'IAM, Federação SSO, NHI & Cofres de Segredos',
       badgeColor: 'bg-rose-500/15 text-rose-400',
+      image: '/assets/aistudio/Digital_identity_federation_arch__20261024192228_da215ae9.jpg',
       description:
         'Conceito de Identidade, Conta, Credencial e Autenticador. Fluxo AAA, Ciclo JML, MFA FIDO2, Federação SAML 2.0 / OIDC, SCIM, Identidades Não Humanas (NHI), Workload Identity Federation (WIF), Cofres de Segredos (HashiCorp/AWS/Azure/GCP), Criptografia Envelope (DEK/KEK) e Motor Híbrido H1.',
       actionText: 'Acessar SSO, NHI, Cofres & Motor H1',
@@ -128,126 +135,157 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-4xl space-y-5 relative z-10">
-          <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
-            <span className="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-bold tracking-wider text-[11px]">
-              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
-              ARQUITETURA CORPORATIVA · NIST CSF 2.0 · ISO/IEC 27001 · ZERO TRUST
-            </span>
-            <span className={isLightMode ? 'text-slate-300' : 'text-slate-700'}>·</span>
-            <span className={`flex items-center gap-1.5 ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
-              <Calendar className="w-3.5 h-3.5 text-cyan-500" />
-              <span>Criado: 19 de Outubro de 2026 (19/10/2026)</span>
-            </span>
-          </div>
-
-          <h1 className={`text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
-            Plataforma Executiva de{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 dark:from-cyan-400 dark:via-blue-300 dark:to-indigo-300">
-              Engenharia em Cybersecurity &amp; Defesa Ativa
-            </span>
-          </h1>
-
-          <p className={`text-sm sm:text-base leading-relaxed ${isLightMode ? 'text-slate-600' : 'text-slate-300'}`}>
-            Ambiente técnico e laboratorial consolidando{' '}
-            <strong className={isLightMode ? 'text-slate-900' : 'text-white'}>
-              100% dos 25 materiais didáticos, guias práticos, blueprints arquiteturais e relatórios técnicos de laboratório
-            </strong>{' '}
-            com material de estudos de autoria do{' '}
-            <strong className={isLightMode ? 'text-slate-900' : 'text-cyan-200'}>
-              Prof. Rômulo Pereira de Almeida
-            </strong>{' '}
-            e plataforma desenvolvida por{' '}
-            <strong className={isLightMode ? 'text-slate-900' : 'text-white'}>
-              José Matheus dos Santos Neto
-            </strong>.
-          </p>
-
-          {/* Author, Professor & LinkedIn Attribution Card */}
-          <div
-            className={`p-4 rounded-2xl border backdrop-blur-md space-y-3 ${
-              isLightMode
-                ? 'bg-white/95 border-slate-200/90 shadow-sm'
-                : 'bg-slate-900/60 border-cyan-500/20 shadow-[0_4px_20px_rgba(0,0,0,0.4)]'
-            }`}
-          >
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700 text-white font-extrabold text-sm flex items-center justify-center shadow-lg shadow-cyan-500/25 shrink-0">
-                  JM
-                </div>
-                <div>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className={`text-sm font-extrabold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
-                      José Matheus dos Santos Neto
-                    </span>
-                    <span className="text-[10px] font-mono text-cyan-600 dark:text-cyan-400 font-bold">
-                      Autor do Portal &amp; Engenharia
-                    </span>
-                  </div>
-                  <p className={`text-xs mt-0.5 font-mono ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
-                    Criado em 19 de Outubro de 2026 · linkedin.com/in/jose-matheus-dos-santos-neto-a37974384
-                  </p>
-                </div>
-              </div>
-
-              <a
-                href="https://www.linkedin.com/in/jose-matheus-dos-santos-neto-a37974384"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`px-4 py-2 rounded-xl font-semibold text-xs border transition flex items-center gap-2 shrink-0 ${
-                  isLightMode
-                    ? 'bg-blue-50/90 hover:bg-blue-100 text-blue-900 border-blue-200 shadow-sm'
-                    : 'bg-blue-950/40 hover:bg-blue-900/60 text-blue-300 border-blue-700/50 hover:text-white shadow-[0_0_12px_rgba(59,130,246,0.15)]'
-                }`}
-              >
-                <Linkedin className="w-4 h-4 text-blue-500" />
-                <span>Acessar LinkedIn</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-70" />
-              </a>
+        <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div className="lg:col-span-8 space-y-5">
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
+              <span className="flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-bold tracking-wider text-[11px]">
+                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
+                ARQUITETURA CORPORATIVA · NIST CSF 2.0 · ISO/IEC 27001 · ZERO TRUST
+              </span>
+              <span className={isLightMode ? 'text-slate-300' : 'text-slate-700'}>·</span>
+              <span className={`flex items-center gap-1.5 ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
+                <Calendar className="w-3.5 h-3.5 text-cyan-500" />
+                <span>Criado: 19 de Outubro de 2026 (19/10/2026)</span>
+              </span>
             </div>
 
-            {/* Credit to Prof. Rômulo Pereira de Almeida */}
+            <h1 className={`text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+              Plataforma Executiva de{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 dark:from-cyan-400 dark:via-blue-300 dark:to-indigo-300">
+                Engenharia em Cybersecurity &amp; Defesa Ativa
+              </span>
+            </h1>
+
+            <p className={`text-sm sm:text-base leading-relaxed ${isLightMode ? 'text-slate-600' : 'text-slate-300'}`}>
+              Ambiente técnico e laboratorial consolidando{' '}
+              <strong className={isLightMode ? 'text-slate-900' : 'text-white'}>
+                100% dos 25 materiais didáticos, guias práticos, blueprints arquiteturais e relatórios técnicos de laboratório
+              </strong>{' '}
+              com material de estudos de autoria do{' '}
+              <strong className={isLightMode ? 'text-slate-900' : 'text-cyan-200'}>
+                Prof. Rômulo Pereira de Almeida
+              </strong>{' '}
+              e plataforma desenvolvida por{' '}
+              <strong className={isLightMode ? 'text-slate-900' : 'text-white'}>
+                José Matheus dos Santos Neto
+              </strong>.
+            </p>
+
+            {/* Author, Professor & LinkedIn Attribution Card */}
             <div
-              className={`pt-3 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs ${
-                isLightMode ? 'border-slate-200 text-slate-700' : 'border-slate-800/80 text-slate-300'
+              className={`p-4 rounded-2xl border backdrop-blur-md space-y-3 ${
+                isLightMode
+                  ? 'bg-white/95 border-slate-200/90 shadow-sm'
+                  : 'bg-slate-900/60 border-cyan-500/20 shadow-[0_4px_20px_rgba(0,0,0,0.4)]'
               }`}
             >
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center font-extrabold text-cyan-700 dark:text-cyan-400 text-xs shrink-0">
-                  RP
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700 text-white font-extrabold text-sm flex items-center justify-center shadow-lg shadow-cyan-500/25 shrink-0">
+                    JM
+                  </div>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className={`text-sm font-extrabold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+                        José Matheus dos Santos Neto
+                      </span>
+                      <span className="text-[10px] font-mono text-cyan-600 dark:text-cyan-400 font-bold">
+                        Autor do Portal &amp; Engenharia
+                      </span>
+                    </div>
+                    <p className={`text-xs mt-0.5 font-mono ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
+                      Criado em 19 de Outubro de 2026 · linkedin.com/in/jose-matheus-dos-santos-neto-a37974384
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <span className="font-bold">Prof. Rômulo Pereira de Almeida</span>
-                  <span className="mx-2 text-slate-400">·</span>
-                  <span className={isLightMode ? 'text-slate-600' : 'text-slate-400'}>
-                    Autor do Material de Estudos, Apostilas Técnicas, Guias de Laboratório &amp; Blueprints IAM
+
+                <a
+                  href="https://www.linkedin.com/in/jose-matheus-dos-santos-neto-a37974384"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`px-4 py-2 rounded-xl font-semibold text-xs border transition flex items-center gap-2 shrink-0 ${
+                    isLightMode
+                      ? 'bg-blue-50/90 hover:bg-blue-100 text-blue-900 border-blue-200 shadow-sm'
+                      : 'bg-blue-950/40 hover:bg-blue-900/60 text-blue-300 border-blue-700/50 hover:text-white shadow-[0_0_12px_rgba(59,130,246,0.15)]'
+                  }`}
+                >
+                  <Linkedin className="w-4 h-4 text-blue-500" />
+                  <span>Acessar LinkedIn</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                </a>
+              </div>
+
+              {/* Credit to Prof. Rômulo Pereira de Almeida */}
+              <div
+                className={`pt-3 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs ${
+                  isLightMode ? 'border-slate-200 text-slate-700' : 'border-slate-800/80 text-slate-300'
+                }`}
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center font-extrabold text-cyan-700 dark:text-cyan-400 text-xs shrink-0">
+                    RP
+                  </div>
+                  <div>
+                    <span className="font-bold">Prof. Rômulo Pereira de Almeida</span>
+                    <span className="mx-2 text-slate-400">·</span>
+                    <span className={isLightMode ? 'text-slate-600' : 'text-slate-400'}>
+                      Autor do Material de Estudos, Apostilas Técnicas, Guias de Laboratório &amp; Blueprints IAM
+                    </span>
+                  </div>
+                </div>
+                <span className="text-cyan-600 dark:text-cyan-400 font-mono text-[10px] font-bold shrink-0">
+                  Autoria Didática Oficial
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-3 pt-1">
+              <button
+                onClick={() => onSelectTab('mod1')}
+                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-cyan-600/25 transition flex items-center gap-2 cursor-pointer"
+              >
+                <Play className="w-4 h-4 fill-current" /> Iniciar Trilha Completa
+              </button>
+              <button
+                onClick={onOpenAcervo}
+                className={`px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm border transition flex items-center gap-2 cursor-pointer ${
+                  isLightMode
+                    ? 'bg-white hover:bg-slate-100 text-slate-800 border-slate-300 shadow-sm'
+                    : 'bg-slate-900/80 hover:bg-slate-800 text-slate-200 border-cyan-500/30 hover:border-cyan-400/50'
+                }`}
+              >
+                <BookOpen className="w-4 h-4 text-cyan-500" /> Ver 25 Documentos
+              </button>
+            </div>
+          </div>
+
+          {/* Futuristic Cyber Shield Showcase Emblem - Visível e nítido em qualquer tema */}
+          <div className="lg:col-span-4 flex flex-col items-center justify-center w-full max-w-sm mx-auto lg:max-w-none">
+            <div className={`relative group p-1.5 rounded-3xl border transition shadow-xl w-full ${
+              isLightMode
+                ? 'bg-white border-cyan-300/60 shadow-[0_4px_24px_rgba(6,182,212,0.15)]'
+                : 'bg-gradient-to-b from-cyan-500/30 via-blue-500/10 to-indigo-500/20 border-cyan-500/35 shadow-[0_0_35px_rgba(6,182,212,0.22)]'
+            }`}>
+              <div className="relative overflow-hidden rounded-2xl w-full cyber-img-box">
+                <img
+                  src="/assets/aistudio/Cybersecurity_shield_emblem_bann__20261024192254_8674da8a.jpg"
+                  alt="Cybersecurity Shield Emblem"
+                  className="w-full h-64 sm:h-72 lg:h-80 object-cover rounded-2xl transition duration-500 group-hover:scale-105"
+                  loading="eager"
+                />
+                <div className="cyber-img-overlay" />
+                <div className="absolute bottom-3 left-3 right-3 text-center">
+                  <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full backdrop-blur-md border text-[11px] font-mono font-bold shadow-lg ${
+                    isLightMode
+                      ? 'bg-white/90 border-cyan-300 text-cyan-800'
+                      : 'bg-slate-900/85 border-cyan-500/40 text-cyan-300'
+                  }`}>
+                    <Shield className="w-3.5 h-3.5 text-cyan-500" />
+                    DEFESA ATIVA · BRASÃO OFICIAL
                   </span>
                 </div>
               </div>
-              <span className="text-cyan-600 dark:text-cyan-400 font-mono text-[10px] font-bold shrink-0">
-                Autoria Didática Oficial
-              </span>
             </div>
-          </div>
-
-          <div className="flex flex-wrap gap-3 pt-1">
-            <button
-              onClick={() => onSelectTab('mod1')}
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-cyan-600/25 transition flex items-center gap-2 cursor-pointer"
-            >
-              <Play className="w-4 h-4 fill-current" /> Iniciar Trilha Completa
-            </button>
-            <button
-              onClick={onOpenAcervo}
-              className={`px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm border transition flex items-center gap-2 cursor-pointer ${
-                isLightMode
-                  ? 'bg-white hover:bg-slate-100 text-slate-800 border-slate-300 shadow-sm'
-                  : 'bg-slate-900/80 hover:bg-slate-800 text-slate-200 border-cyan-500/30 hover:border-cyan-400/50'
-              }`}
-            >
-              <BookOpen className="w-4 h-4 text-cyan-500" /> Ver Inventário dos 25 Documentos
-            </button>
           </div>
         </div>
       </div>
@@ -343,16 +381,30 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div className="grid md:grid-cols-3 gap-4">
           {/* Pillar 1: Federação & SSO */}
           <div
-            className={`p-4 rounded-2xl border transition flex flex-col justify-between ${
+            className={`p-4 rounded-2xl border transition flex flex-col justify-between group ${
               isLightMode
                 ? 'bg-white/90 border-slate-200 shadow-sm'
                 : 'bg-slate-900/90 border-slate-800'
             }`}
           >
             <div>
-              <div className="flex items-center justify-between text-[10px] font-mono mb-2">
-                <span className="px-2 py-0.5 rounded bg-blue-500/15 text-blue-600 dark:text-blue-400 font-bold">
+              {/* Image Banner */}
+              <div className="relative w-full h-32 rounded-xl overflow-hidden mb-3 border border-blue-500/25 cyber-img-box">
+                <img
+                  src="/assets/aistudio/Digital_identity_federation_arch__20261024192228_da215ae9.jpg"
+                  alt="Federação de Identidades & SSO"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="cyber-img-overlay" />
+                <span className="absolute top-2 left-2 px-2 py-0.5 rounded bg-blue-950/80 backdrop-blur-md text-blue-300 font-mono text-[10px] font-bold border border-blue-500/30">
                   Docs #19 e #20
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between text-[10px] font-mono mb-1.5">
+                <span className="text-blue-600 dark:text-blue-400 font-bold uppercase">
+                  Federação &amp; Tokens
                 </span>
                 <span className="text-slate-500 font-semibold">42 páginas / slides</span>
               </div>
@@ -368,7 +420,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <a
                 href="/assets/aistudio/Material_Didatico_IAM_Federacao_SSO_JJ_eb59222b.pdf"
                 download
-                className="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[10px] flex items-center gap-1 transition"
+                className="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[10px] flex items-center gap-1 transition shadow-sm"
               >
                 <span>Baixar Apostila (27p)</span>
               </a>
@@ -376,7 +428,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 href="/assets/aistudio/Blueprint_de_Federa__o_e_SSO_0396ad34.pdf"
                 download
                 className={`px-2.5 py-1 rounded-lg border font-semibold text-[10px] flex items-center gap-1 transition ${
-                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-slate-200'
+                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-850 hover:bg-slate-800 border-slate-700 text-slate-200'
                 }`}
               >
                 <span>Blueprint (15s)</span>
@@ -386,16 +438,30 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
           {/* Pillar 2: Identidades Não Humanas (NHI) */}
           <div
-            className={`p-4 rounded-2xl border transition flex flex-col justify-between ${
+            className={`p-4 rounded-2xl border transition flex flex-col justify-between group ${
               isLightMode
                 ? 'bg-white/90 border-slate-200 shadow-sm'
                 : 'bg-slate-900/90 border-slate-800'
             }`}
           >
             <div>
-              <div className="flex items-center justify-between text-[10px] font-mono mb-2">
-                <span className="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-bold">
+              {/* Image Banner */}
+              <div className="relative w-full h-32 rounded-xl overflow-hidden mb-3 border border-emerald-500/25 cyber-img-box">
+                <img
+                  src="/assets/aistudio/Non-Human_Identities_communicati__20261024192236_15372edd.jpg"
+                  alt="Identidades Não Humanas (NHI)"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="cyber-img-overlay" />
+                <span className="absolute top-2 left-2 px-2 py-0.5 rounded bg-emerald-950/80 backdrop-blur-md text-emerald-300 font-mono text-[10px] font-bold border border-emerald-500/30">
                   Docs #21, #22 e #23
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between text-[10px] font-mono mb-1.5">
+                <span className="text-emerald-600 dark:text-emerald-400 font-bold uppercase">
+                  Governança WIF
                 </span>
                 <span className="text-slate-500 font-semibold">67 páginas / slides</span>
               </div>
@@ -411,7 +477,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <a
                 href="/assets/aistudio/Material_Didatico_IAM_Identidades_Nao_Humanas_JJ_c94eac27.pdf"
                 download
-                className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-[10px] flex items-center gap-1 transition"
+                className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-[10px] flex items-center gap-1 transition shadow-sm"
               >
                 <span>Apostila (27p)</span>
               </a>
@@ -419,7 +485,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 href="/assets/aistudio/Blueprint_de_Identidades_N_o_Humanas__1__ff4d6dd2.pdf"
                 download
                 className={`px-2.5 py-1 rounded-lg border font-semibold text-[10px] flex items-center gap-1 transition ${
-                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-slate-200'
+                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-850 hover:bg-slate-800 border-slate-700 text-slate-200'
                 }`}
               >
                 <span>Blueprint</span>
@@ -428,7 +494,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 href="/assets/aistudio/organized_fac73fe4.pdf"
                 download
                 className={`px-2.5 py-1 rounded-lg border font-semibold text-[10px] flex items-center gap-1 transition ${
-                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-slate-200'
+                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-850 hover:bg-slate-800 border-slate-700 text-slate-200'
                 }`}
               >
                 <span>Casos Práticos (25s)</span>
@@ -438,16 +504,30 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
           {/* Pillar 3: Gestão de Credenciais & Cofres */}
           <div
-            className={`p-4 rounded-2xl border transition flex flex-col justify-between ${
+            className={`p-4 rounded-2xl border transition flex flex-col justify-between group ${
               isLightMode
                 ? 'bg-white/90 border-slate-200 shadow-sm'
                 : 'bg-slate-900/90 border-slate-800'
             }`}
           >
             <div>
-              <div className="flex items-center justify-between text-[10px] font-mono mb-2">
-                <span className="px-2 py-0.5 rounded bg-rose-500/15 text-rose-600 dark:text-rose-400 font-bold">
+              {/* Image Banner */}
+              <div className="relative w-full h-32 rounded-xl overflow-hidden mb-3 border border-rose-500/25 cyber-img-box">
+                <img
+                  src="/assets/aistudio/Security_vault_with_storage_cells_20261024192539_1efd5503.jpg"
+                  alt="Cofres de Segredos & Envelope Crypto"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="cyber-img-overlay" />
+                <span className="absolute top-2 left-2 px-2 py-0.5 rounded bg-rose-950/80 backdrop-blur-md text-rose-300 font-mono text-[10px] font-bold border border-rose-500/30">
                   Docs #24 e #25
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between text-[10px] font-mono mb-1.5">
+                <span className="text-rose-600 dark:text-rose-400 font-bold uppercase">
+                  Cofres &amp; Crypto
                 </span>
                 <span className="text-slate-500 font-semibold">46 páginas / slides</span>
               </div>
@@ -463,7 +543,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <a
                 href="/assets/aistudio/Material_Didatico_IAM_Gestao_Credenciais_Cofres_Segredos_JJ_9d93122d.pdf"
                 download
-                className="px-2.5 py-1 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-semibold text-[10px] flex items-center gap-1 transition"
+                className="px-2.5 py-1 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-semibold text-[10px] flex items-center gap-1 transition shadow-sm"
               >
                 <span>Baixar Apostila (31p)</span>
               </a>
@@ -471,7 +551,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 href="/assets/aistudio/Gest_o_de_Credenciais_e_Segredos_7539a3c4.pdf"
                 download
                 className={`px-2.5 py-1 rounded-lg border font-semibold text-[10px] flex items-center gap-1 transition ${
-                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-slate-200'
+                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-850 hover:bg-slate-800 border-slate-700 text-slate-200'
                 }`}
               >
                 <span>Blueprint (15s)</span>
@@ -500,10 +580,24 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <div
                 key={m.id}
                 onClick={() => onSelectTab(m.id)}
-                className="hud-panel rounded-2xl p-5 cursor-pointer group flex flex-col justify-between transition-all duration-200 hover:border-cyan-500/50 hover:shadow-[0_8px_30px_-6px_rgba(6,182,212,0.15)]"
+                className="hud-panel rounded-2xl p-4 sm:p-5 cursor-pointer group flex flex-col justify-between transition-all duration-200 hover:border-cyan-500/50 hover:shadow-[0_8px_30px_-6px_rgba(6,182,212,0.15)]"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3 text-xs font-mono">
+                  {/* Module Image Preview Card */}
+                  <div className="relative w-full h-36 sm:h-40 rounded-xl overflow-hidden mb-3.5 border border-slate-700/40 group-hover:border-cyan-500/40 transition cyber-img-box">
+                    <img
+                      src={m.image}
+                      alt={m.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="cyber-img-overlay" />
+                    <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-slate-950/85 backdrop-blur-md text-[10px] font-mono text-cyan-400 font-bold border border-cyan-500/30">
+                      {m.num}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between mb-2 text-xs font-mono">
                     <span className="text-cyan-600 dark:text-cyan-400 font-bold tracking-wider">
                       {m.num}
                     </span>

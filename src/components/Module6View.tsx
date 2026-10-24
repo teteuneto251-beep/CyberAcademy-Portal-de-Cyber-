@@ -256,18 +256,40 @@ export const Module6View: React.FC<Module6ViewProps> = ({ isLightMode = false })
 
   return (
     <div className="space-y-8 animate-fadeIn">
-      {/* Module Header */}
-      <div className="border-b border-slate-800 pb-5">
-        <div className="flex items-center gap-2 text-rose-400 text-xs font-mono uppercase mb-1">
-          <UserCheck className="w-4 h-4" />
-          <span>Módulo 06 • Documentos #09, #10, #11, #17 a #25 (Trilha Completa de IAM, SSO, NHI &amp; Cofres)</span>
+      {/* Module Header with IAM Federation Showcase */}
+      <div
+        className={`relative rounded-2xl overflow-hidden border p-6 flex flex-col md:flex-row items-center justify-between gap-6 transition ${
+          isLightMode
+            ? 'bg-gradient-to-r from-rose-50/90 via-white to-indigo-50/70 border-rose-200 shadow-sm'
+            : 'bg-gradient-to-r from-rose-950/40 via-slate-900 to-indigo-950/30 border-rose-500/25 shadow-lg'
+        }`}
+      >
+        <div className="space-y-2 max-w-2xl">
+          <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 text-xs font-mono uppercase">
+            <UserCheck className="w-4 h-4" />
+            <span>Módulo 06 • Documentos #09, #10, #11, #17 a #25 (Trilha Completa de IAM, SSO, NHI &amp; Cofres)</span>
+          </div>
+          <h2 className={`text-2xl sm:text-3xl font-extrabold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+            IAM Blueprint: Autorização, Federação SSO, NHI &amp; Cofres de Segredos
+          </h2>
+          <p className={`text-sm ${isLightMode ? 'text-slate-600' : 'text-slate-300'}`}>
+            Materiais didáticos oficiais do <strong>Prof. Rômulo Pereira de Almeida</strong>. Do modelo <strong>RBAC / ABAC</strong> e motor híbrido H1 à <strong>Federação SAML 2.0 / OIDC</strong>, <strong>Identidades Não Humanas (NHI)</strong> e <strong>Cofres de Segredos com Criptografia Envelope</strong>.
+          </p>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-          IAM Blueprint: Autorização, Federação SSO, NHI &amp; Cofres de Segredos
-        </h2>
-        <p className="text-sm text-slate-400 mt-1">
-          Materiais didáticos oficiais do <strong>Prof. Rômulo Pereira de Almeida</strong>. Do modelo <strong>RBAC / ABAC</strong> e motor híbrido H1 à <strong>Federação SAML 2.0 / OIDC</strong>, <strong>Identidades Não Humanas (NHI)</strong> e <strong>Cofres de Segredos com Criptografia Envelope</strong>.
-        </p>
+        <div className="shrink-0 w-full md:w-56 h-36 rounded-xl overflow-hidden border border-rose-500/30 shadow-md relative group cyber-img-box">
+          <img
+            src="/assets/aistudio/Digital_identity_federation_arch__20261024192228_da215ae9.jpg"
+            alt="IAM and Digital Identity Federation"
+            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            loading="lazy"
+          />
+          <div className="cyber-img-overlay" />
+          <span className={`absolute bottom-2 left-2 text-[10px] font-mono font-bold px-2 py-0.5 rounded backdrop-blur-md border ${
+            isLightMode ? 'bg-white/90 text-rose-900 border-rose-200' : 'bg-slate-950/80 text-rose-300 border-rose-500/30'
+          }`}>
+            IAM · SSO · NHI · Cofres
+          </span>
+        </div>
       </div>
 
       {/* Sub-navigation Tabs - Futuristic Segmented HUD */}

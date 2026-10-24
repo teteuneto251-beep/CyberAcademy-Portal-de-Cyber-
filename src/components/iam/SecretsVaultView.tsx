@@ -93,7 +93,7 @@ export const SecretsVaultView: React.FC<SecretsVaultViewProps> = ({ isLightMode 
             : 'bg-gradient-to-r from-rose-950/40 via-slate-900 to-amber-950/30 border-rose-900/60'
         }`}
       >
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-700 dark:text-rose-300 font-mono text-xs font-bold border border-rose-500/30">
@@ -141,6 +141,21 @@ export const SecretsVaultView: React.FC<SecretsVaultViewProps> = ({ isLightMode 
               <Download className="w-3.5 h-3.5" />
               <span>Baixar Blueprint (15s)</span>
             </a>
+          </div>
+
+          <div className="shrink-0 w-full lg:w-56 h-36 rounded-xl overflow-hidden border border-rose-500/30 shadow-md relative group cyber-img-box">
+            <img
+              src="/assets/aistudio/Security_vault_with_storage_cells_20261024192539_1efd5503.jpg"
+              alt="Security vault with electronic locking cells and cryptographic keys"
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              loading="lazy"
+            />
+            <div className="cyber-img-overlay" />
+            <span className={`absolute bottom-2 left-2 text-[10px] font-mono font-bold px-2 py-0.5 rounded backdrop-blur-md border ${
+              isLightMode ? 'bg-white/90 text-rose-900 border-rose-200' : 'bg-slate-950/80 text-rose-300 border-rose-500/30'
+            }`}>
+              Cofre · Envelope DEK/KEK
+            </span>
           </div>
         </div>
       </div>

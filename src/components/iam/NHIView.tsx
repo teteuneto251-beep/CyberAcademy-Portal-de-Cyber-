@@ -107,7 +107,7 @@ vault write -f aws/creds/workload-role
             : 'bg-gradient-to-r from-emerald-950/40 via-slate-900 to-teal-950/30 border-emerald-900/60'
         }`}
       >
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 font-mono text-xs font-bold border border-emerald-500/30">
@@ -167,6 +167,21 @@ vault write -f aws/creds/workload-role
               <Download className="w-3.5 h-3.5" />
               <span>Casos Práticos (25s)</span>
             </a>
+          </div>
+
+          <div className="shrink-0 w-full lg:w-56 h-36 rounded-xl overflow-hidden border border-emerald-500/30 shadow-md relative group cyber-img-box">
+            <img
+              src="/assets/aistudio/Non-Human_Identities_communicati__20261024192236_15372edd.jpg"
+              alt="Non-Human Identities communicating with Kubernetes and Cloud"
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              loading="lazy"
+            />
+            <div className="cyber-img-overlay" />
+            <span className={`absolute bottom-2 left-2 text-[10px] font-mono font-bold px-2 py-0.5 rounded backdrop-blur-md border ${
+              isLightMode ? 'bg-white/90 text-emerald-900 border-emerald-200' : 'bg-slate-950/80 text-emerald-300 border-emerald-500/30'
+            }`}>
+              NHI · WIF · K8s Pods
+            </span>
           </div>
         </div>
       </div>

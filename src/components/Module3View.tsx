@@ -14,7 +14,11 @@ import {
 } from 'lucide-react';
 import { auroraAssetsData, auroraRisksData, AuroraAsset, AuroraRisk } from '../data/modulesData';
 
-export const Module3View: React.FC = () => {
+interface Module3ViewProps {
+  isLightMode?: boolean;
+}
+
+export const Module3View: React.FC<Module3ViewProps> = ({ isLightMode = false }) => {
   const [assetFilter, setAssetFilter] = useState<string>('Todos');
   const [heatmapMode, setHeatmapMode] = useState<'inerente' | 'residual' | 'ambos'>('inerente');
   const [selectedRiskPin, setSelectedRiskPin] = useState<string | null>('G01-RSK-03');
@@ -49,18 +53,40 @@ export const Module3View: React.FC = () => {
 
   return (
     <div className="space-y-8 animate-fadeIn">
-      {/* Module Header */}
-      <div className="border-b border-slate-800 pb-5">
-        <div className="flex items-center gap-2 text-amber-400 text-xs font-mono uppercase mb-1">
-          <BarChart3 className="w-4 h-4" />
-          <span>Módulo 03 • Documentos #04, #12 e #13 (Workbook &amp; Diagnóstico Aurora)</span>
+      {/* Module Header with Risk Management Showcase */}
+      <div
+        className={`relative rounded-2xl overflow-hidden border p-6 flex flex-col md:flex-row items-center justify-between gap-6 transition ${
+          isLightMode
+            ? 'bg-gradient-to-r from-amber-50/90 via-white to-yellow-50/70 border-amber-200 shadow-sm'
+            : 'bg-gradient-to-r from-amber-950/40 via-slate-900 to-yellow-950/30 border-amber-500/25 shadow-lg'
+        }`}
+      >
+        <div className="space-y-2 max-w-2xl">
+          <div className="flex items-center gap-2 text-amber-600 dark:text-amber-400 text-xs font-mono uppercase">
+            <BarChart3 className="w-4 h-4" />
+            <span>Módulo 03 • Documentos #04, #12 e #13 (Workbook &amp; Diagnóstico Aurora)</span>
+          </div>
+          <h2 className={`text-2xl sm:text-3xl font-extrabold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+            Gestão de Riscos &amp; Diagnóstico: Aurora Distribuição Corporativa
+          </h2>
+          <p className={`text-sm ${isLightMode ? 'text-slate-600' : 'text-slate-300'}`}>
+            Material do <strong>Prof. Rômulo Pereira de Almeida</strong> com análise de 48 colaboradores, 120 pedidos/dia, tolerância manual de até 2 horas, meta de <strong>RTO de 4h</strong>, <strong>RPO de 1h</strong> e auditoria da prestadora terceirizada NexoTI.
+          </p>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-          Gestão de Riscos &amp; Diagnóstico: Aurora Distribuição Corporativa
-        </h2>
-        <p className="text-sm text-slate-400 mt-1">
-          Análise aprofundada do ambiente de 48 colaboradores: volume de 120 pedidos/dia, tolerância manual de até 2 horas, meta de <strong>RTO de 4h</strong>, <strong>RPO de 1h</strong> e auditoria da prestadora de serviços terceirizada NexoTI.
-        </p>
+        <div className="shrink-0 w-full md:w-56 h-36 rounded-xl overflow-hidden border border-amber-500/30 shadow-md relative group cyber-img-box">
+          <img
+            src="/assets/aistudio/Corporate_risk_management_execut__20261024192245_dfa047d3.jpg"
+            alt="Corporate Risk Management Boardroom"
+            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            loading="lazy"
+          />
+          <div className="cyber-img-overlay" />
+          <span className={`absolute bottom-2 left-2 text-[10px] font-mono font-bold px-2 py-0.5 rounded backdrop-blur-md border ${
+            isLightMode ? 'bg-white/90 text-amber-900 border-amber-200' : 'bg-slate-950/80 text-amber-300 border-amber-500/30'
+          }`}>
+            Matriz 5x5 · Aurora Dist.
+          </span>
+        </div>
       </div>
 
       {/* Parâmetros Críticos do Caso Aurora */}

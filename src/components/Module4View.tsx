@@ -52,18 +52,40 @@ export const Module4View: React.FC<Module4ViewProps> = ({
 
   return (
     <div className="space-y-8 animate-fadeIn">
-      {/* Module Header */}
-      <div className="border-b border-slate-800 pb-5">
-        <div className="flex items-center gap-2 text-purple-400 text-xs font-mono uppercase mb-1">
-          <Network className="w-4 h-4" />
-          <span>Módulo 04 • Documentos #05, #14 e #15 (Aulas de Redes &amp; Laboratório Wireshark)</span>
+      {/* Module Header with Network Packets Showcase */}
+      <div
+        className={`relative rounded-2xl overflow-hidden border p-6 flex flex-col md:flex-row items-center justify-between gap-6 transition ${
+          isLightMode
+            ? 'bg-gradient-to-r from-purple-50/90 via-white to-indigo-50/70 border-purple-200 shadow-sm'
+            : 'bg-gradient-to-r from-purple-950/40 via-slate-900 to-indigo-950/30 border-purple-500/25 shadow-lg'
+        }`}
+      >
+        <div className="space-y-2 max-w-2xl">
+          <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 text-xs font-mono uppercase">
+            <Network className="w-4 h-4" />
+            <span>Módulo 04 • Documentos #05, #14 e #15 (Aulas de Redes &amp; Laboratório Wireshark)</span>
+          </div>
+          <h2 className={`text-2xl sm:text-3xl font-extrabold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+            Fundamentos de Redes, Protocolos TCP/IP &amp; Análise com Wireshark
+          </h2>
+          <p className={`text-sm ${isLightMode ? 'text-slate-600' : 'text-slate-300'}`}>
+            Material do <strong>Prof. Rômulo Pereira de Almeida</strong> cobrindo o Modelo OSI vs TCP/IP, Advanced IP Scanner, Three-Way Handshake TCP e Dissecação Real de Pacotes <strong>QUIC (HTTP/3)</strong> e <strong>ICMPv6 (NDP)</strong>.
+          </p>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-          Fundamentos de Redes, Protocolos TCP/IP &amp; Análise com Wireshark
-        </h2>
-        <p className="text-sm text-slate-400 mt-1">
-          Modelo OSI vs TCP/IP, Descoberta com Advanced IP Scanner, Three-Way Handshake TCP e Dissecação Real de Pacotes <strong>QUIC (HTTP/3)</strong> e <strong>ICMPv6 (NDP)</strong> mascarados.
-        </p>
+        <div className="shrink-0 w-full md:w-56 h-36 rounded-xl overflow-hidden border border-purple-500/30 shadow-md relative group cyber-img-box">
+          <img
+            src="/assets/aistudio/Data_packets_traveling_across_ne__20261024192207_422b4094.jpg"
+            alt="Data packets traveling across high-speed network fiber optics"
+            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            loading="lazy"
+          />
+          <div className="cyber-img-overlay" />
+          <span className={`absolute bottom-2 left-2 text-[10px] font-mono font-bold px-2 py-0.5 rounded backdrop-blur-md border ${
+            isLightMode ? 'bg-white/90 text-purple-900 border-purple-200' : 'bg-slate-950/80 text-purple-300 border-purple-500/30'
+          }`}>
+            Dissecador Wireshark · QUIC
+          </span>
+        </div>
       </div>
 
       {/* Comparativo Conceitual: Camadas e Descoberta */}
