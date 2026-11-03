@@ -13,6 +13,7 @@ import {
   Calendar,
   Sparkles
 } from 'lucide-react';
+import { PWAInstallButton } from './pwa/PWAInstallButton';
 
 interface HeaderProps {
   currentTab: string;
@@ -169,6 +170,9 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </button>
           )}
+
+          {/* In-App PWA Install Action */}
+          <PWAInstallButton variant="header" isLightMode={isLightMode} />
 
           <div
             className={`hidden lg:flex items-center gap-2 border px-3 py-1.5 rounded-xl text-[11px] font-mono ${

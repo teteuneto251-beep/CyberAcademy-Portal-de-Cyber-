@@ -35,11 +35,12 @@ export const ModalAcervo: React.FC<ModalAcervoProps> = ({
 
   if (!isOpen) return null;
 
-  const categories = ['Todos', 'Apostilas', 'Guias Práticos', 'Diagnósticos', 'Relatórios', 'Com PDF Oficial'];
+  const categories = ['Todos', 'Módulo 7 (Cloud)', 'Apostilas', 'Guias Práticos', 'Diagnósticos', 'Relatórios', 'Com PDF Oficial'];
 
   const filteredDocs = acervoDocs.filter((doc) => {
     const matchesCategory =
       filterCategory === 'Todos' ||
+      (filterCategory === 'Módulo 7 (Cloud)' && doc.modulo === 'mod7') ||
       (filterCategory === 'Apostilas' && doc.categoria === 'Apostila') ||
       (filterCategory === 'Guias Práticos' && doc.categoria === 'Guia Prático') ||
       (filterCategory === 'Diagnósticos' && doc.categoria === 'Diagnóstico / Risco') ||

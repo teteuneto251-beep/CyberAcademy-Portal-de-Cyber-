@@ -1,6 +1,6 @@
 {
   "name": "Engenharia & Defesa Cibernética | Plataforma Técnica de Segurança & SOC",
-  "description": "Plataforma técnica de Engenharia em Cybersecurity com 6 módulos didáticos, laboratórios interativos, dissecador de pacotes, simulador de firewall e simulado prático.",
+  "description": "Plataforma técnica de Engenharia em Cybersecurity com 7 módulos didáticos, 32 documentos e apostilas do Prof. Rômulo Pereira de Almeida, laboratórios interativos e simuladores.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

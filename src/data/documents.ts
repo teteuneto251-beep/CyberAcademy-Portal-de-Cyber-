@@ -4,7 +4,7 @@ export interface TechDoc {
   subtitulo?: string;
   categoria: 'Apostila' | 'Guia Prático' | 'Diagnóstico / Risco' | 'Relatório de Lab';
   autor: string;
-  modulo: 'mod1' | 'mod2' | 'mod3' | 'mod4' | 'mod5' | 'mod6';
+  modulo: 'mod1' | 'mod2' | 'mod3' | 'mod4' | 'mod5' | 'mod6' | 'mod7';
   resumo: string;
   tags: string[];
   pdfUrl?: string;
@@ -265,7 +265,99 @@ export const acervo25Docs: TechDoc[] = [
     pdfUrl: "/assets/aistudio/Gest_o_de_Credenciais_e_Segredos_7539a3c4.pdf",
     paginas: "15 slides executivos",
     dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "26",
+    titulo: "Computação em Nuvem: Conceitos Fundamentais, IaaS, PaaS e SaaS",
+    subtitulo: "Material Didático do Aluno — Fundamentos de Cloud e Modelos de Serviço",
+    categoria: "Apostila",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod7",
+    resumo: "Conceitos fundamentais de Cloud Computing conforme o NIST SP 800-145 (5 características essenciais), modelos de implantação (Pública, Privada, Híbrida e Comunitária), taxonomia IaaS vs PaaS vs SaaS, virtualização (Hypervisors Tipo 1 e 2) vs contêineres, resiliência geográfica (Regiões, Zonas de Disponibilidade e Edge Locations), princípios de FinOps (Capex vs Opex) e estudo de caso corporativo TechNova.",
+    tags: ["Cloud Computing", "NIST SP 800-145", "IaaS", "PaaS", "SaaS", "FinOps", "Virtualização", "TechNova"],
+    pdfUrl: "/assets/aistudio/Material_Didatico_Cloud_IaaS_PaaS_SaaS_JJ_23fdc4d5.pdf",
+    paginas: "11 páginas",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "27",
+    titulo: "Mapeamento Estrutural de Cloud Computing: Arquitetura, Governança e Modelos Operacionais",
+    subtitulo: "Blueprint Executivo — Da Estratégia de Adoção à Segurança Multinuvem",
+    categoria: "Guia Prático",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod7",
+    resumo: "Blueprint visual executivo unificando os pilares de arquitetura de nuvem: árvore de decisão para seleção entre IaaS, PaaS e SaaS, matriz de mitos vs verdades operacionais, estrutura de governança FinOps para otimização de custos e diretrizes de conformidade regulatória para ambientes em nuvem.",
+    tags: ["Blueprint", "Arquitetura Cloud", "Árvore de Decisão", "Governança", "FinOps", "Multinuvem"],
+    pdfUrl: "/assets/aistudio/Arquitetura_e_Seguranc_a_em_Nuvem_152f7053.pdf",
+    paginas: "15 slides executivos",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "28",
+    titulo: "Modelo de Responsabilidade Compartilhada na Prática: Matriz Operacional e Gestão de Incidentes",
+    subtitulo: "Material Didático do Aluno — Papéis, Limites de Custódia e Gestão de Incidentes",
+    categoria: "Apostila",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod7",
+    resumo: "Detalhamento aprofundado do Shared Responsibility Model em IaaS, PaaS e SaaS: definição de papéis (Segurança da Informação, CloudOps, DevSecOps e Compliance), matriz operacional de 9 camadas (física até dados), análise de 7 cenários práticos de incidentes reais (INC-01 a INC-07) com determinação de causa-raiz e parte responsável, além de template oficial para notificação de incidentes (INC-2026-014).",
+    tags: ["Responsabilidade Compartilhada", "Matriz Operacional", "IaaS/PaaS/SaaS", "Incidentes", "RACI", "DevSecOps"],
+    pdfUrl: "/assets/aistudio/Material_Didatico_Responsabilidade_Compartilhada_Na_Pratica_JJ_5fe39f6f.pdf",
+    paginas: "7 páginas",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "29",
+    titulo: "Modelo de Responsabilidade Compartilhada na Prática: Guia Operacional e Blueprint de Diagnóstico",
+    subtitulo: "Blueprint Executivo — Matriz de Custódia e Protocolo de Resposta a Incidentes",
+    categoria: "Guia Prático",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod7",
+    resumo: "Guia operacional visual com matriz diagnóstica de responsabilidade compartilhada, delimitação clara da fronteira de custódia entre provedor e cliente, taxonomia de causas-raiz de vazamentos na nuvem e fluxo padrão para resposta a incidentes de segurança cibernética.",
+    tags: ["Blueprint", "Guia Operacional", "Matriz Diagnóstica", "Fronteira de Custódia", "Resposta a Incidentes"],
+    pdfUrl: "/assets/aistudio/Responsabilidade_Compartilhada_na_Nuvem_79add434.pdf",
+    paginas: "12 slides executivos",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "30",
+    titulo: "Segurança em Cloud: Redes e Perímetro",
+    subtitulo: "Material Didático do Aluno — Arquitetura de Redes, Isolamento e Defesa em Profundidade",
+    categoria: "Apostila",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod7",
+    resumo: "Guia completo de engenharia de redes em nuvem: Virtual Private Cloud (VPC/VNet), blocos CIDR RFC 1918, sub-redes públicas e privadas, tabelas de roteamento, Internet Gateway (IGW) vs NAT Gateway, arquitetura de referência em 3 camadas (3-Tier), comparação técnica aprofundada entre Stateful Security Groups (instância/ENI) e Stateless NACLs (sub-rede), serviços de borda (WAF, DDoS Shield, CDN), filtragem Ingress/Egress, transição de VPN para Zero Trust (ZTNA) e 6 estudos de caso práticos.",
+    tags: ["VPC", "CIDR", "Security Group", "NACL", "Stateful vs Stateless", "3-Tier", "WAF", "DDoS", "Zero Trust"],
+    pdfUrl: "/assets/aistudio/Material_Didatico_Seguranca_Cloud_Redes_Perimetro_JJ_0f616616.pdf",
+    paginas: "7 páginas",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "31",
+    titulo: "Segurança em Cloud: Redes e Perímetro — Mapa do Perímetro e Arquitetura de Defesa",
+    subtitulo: "Blueprint Executivo — Topologia de Defesa em Profundidade e Fluxo de Pacotes",
+    categoria: "Guia Prático",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod7",
+    resumo: "Blueprint executivo com mapa esquemático da topologia de perímetro em nuvem: camadas de defesa em profundidade, fluxo bidirecional de inspeção de pacotes (borda até banco de dados isolado), configuração e envio de VPC Flow Logs para SIEM corporativo e matriz de decisão para segmentação de microsserviços.",
+    tags: ["Blueprint", "Topologia de Perímetro", "Defesa em Profundidade", "VPC Flow Logs", "SIEM", "Inspeção"],
+    pdfUrl: "/assets/aistudio/Seguranc_a_de_Redes_e_Peri_metro_em_Nuvem_077a159f.pdf",
+    paginas: "15 slides executivos",
+    dataPublicacao: "Outubro de 2026"
+  },
+  {
+    num: "32",
+    titulo: "Caderno de Microtarefas Práticas: Segurança em Cloud (Redes e Perímetro)",
+    subtitulo: "10 Desafios Técnicos Resolvidos — Da Subnetting e Firewalls à Auditoria CIS",
+    categoria: "Guia Prático",
+    autor: "Prof. Rômulo Pereira de Almeida",
+    modulo: "mod7",
+    resumo: "Resolução detalhada e comentada de 10 microtarefas técnicas essenciais para engenheiros de segurança em nuvem: 1. Dimensionamento de CIDR e reserva de IPs pelo CSP; 2. Isolamento de bancos com NAT Gateway vs IGW; 3. Regras de Security Group vs NACL stateless; 4. Mitigação de DDoS volumétrico no perímetro; 5. Isolamento de banco de dados por Security Group de aplicação; 6. Acesso administrativo sem Bastion Host exposto (SSM Session Manager); 7. Detecção de port scanning via VPC Flow Logs; 8. Filtragem Egress contra C2 e exfiltração; 9. Migração de VPN para Zero Trust (ZTNA); 10. Auditoria automatizada de conformidade CIS com AWS Config / Azure Policy.",
+    tags: ["Microtarefas", "Exercícios Resolvidos", "CIDR", "NAT Gateway", "SG vs NACL", "VPC Flow Logs", "Zero Trust", "CIS Benchmarks"],
+    pdfUrl: "/assets/aistudio/microtarefas_estudantes_seguranca_nuvem_2368b864.pdf",
+    paginas: "3 páginas (10 microtarefas resolvidas)",
+    dataPublicacao: "Outubro de 2026"
   }
 ];
 
 export const acervoDocs = acervo25Docs;
+

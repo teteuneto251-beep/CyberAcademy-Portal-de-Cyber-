@@ -23,9 +23,11 @@ import {
   Calendar,
   ExternalLink,
   User,
-  Sparkles
+  Sparkles,
+  Cloud
 } from 'lucide-react';
 import { SecurityRadarChart } from './SecurityRadarChart';
+import { PWAInstallButton } from './pwa/PWAInstallButton';
 
 interface DashboardViewProps {
   onSelectTab: (tabId: string) => void;
@@ -118,6 +120,19 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       actionText: 'Acessar SSO, NHI, Cofres & Motor H1',
       icon: UserCheck,
       accent: 'rose'
+    },
+    {
+      id: 'mod7',
+      num: 'MÓDULO 07',
+      docs: 'Docs #26 a #32',
+      title: 'Cloud Computing, Responsabilidade Compartilhada & Redes de Perímetro',
+      badgeColor: 'bg-sky-500/15 text-sky-400',
+      image: '/assets/aistudio/Corporate_network_fortress_archi__20261024192219_6ed44814.jpg',
+      description:
+        'Conceitos NIST SP 800-145 (5 características), taxonomia IaaS vs PaaS vs SaaS, fronteira na Matriz de Responsabilidade Compartilhada com 7 incidentes reais, VPC em 3 camadas, Stateful Security Groups vs Stateless NACLs e 10 microtarefas práticas resolvidas.',
+      actionText: 'Acessar Cloud, Matriz & Perímetro',
+      icon: Cloud,
+      accent: 'sky'
     }
   ];
 
@@ -159,7 +174,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <p className={`text-sm sm:text-base leading-relaxed ${isLightMode ? 'text-slate-600' : 'text-slate-300'}`}>
               Ambiente técnico e laboratorial consolidando{' '}
               <strong className={isLightMode ? 'text-slate-900' : 'text-white'}>
-                100% dos 25 materiais didáticos, guias práticos, blueprints arquiteturais e relatórios técnicos de laboratório
+                100% dos 32 materiais didáticos, guias práticos, blueprints arquiteturais e relatórios técnicos de laboratório
               </strong>{' '}
               com material de estudos de autoria do{' '}
               <strong className={isLightMode ? 'text-slate-900' : 'text-cyan-200'}>
@@ -254,8 +269,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     : 'bg-slate-900/80 hover:bg-slate-800 text-slate-200 border-cyan-500/30 hover:border-cyan-400/50'
                 }`}
               >
-                <BookOpen className="w-4 h-4 text-cyan-500" /> Ver 25 Documentos
+                <BookOpen className="w-4 h-4 text-cyan-500" /> Ver 32 Documentos
               </button>
+              <PWAInstallButton variant="header" isLightMode={isLightMode} />
             </div>
           </div>
 
@@ -299,10 +315,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <FileText className="w-4 h-4 text-cyan-400" />
           </div>
           <p className={`text-2xl sm:text-3xl font-extrabold mt-2 font-mono tracking-tight ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
-            25
+            32
           </p>
           <p className="text-[11px] text-emerald-500 dark:text-emerald-400 mt-1.5 font-medium flex items-center gap-1">
-            <CheckCircle2 className="w-3.5 h-3.5" /> 20 Apostilas/Blueprints + 5 Labs
+            <CheckCircle2 className="w-3.5 h-3.5" /> 27 Apostilas/Blueprints + 5 Labs
           </p>
         </div>
 
@@ -323,9 +339,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <Wrench className="w-4 h-4 text-purple-400" />
           </div>
           <p className={`text-2xl sm:text-3xl font-extrabold mt-2 font-mono tracking-tight ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
-            6 Labs
+            7 Labs
           </p>
-          <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5">Wireshark, NetSim, SOC &amp; H1</p>
+          <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5">Wireshark, NetSim, SOC, H1 &amp; Cloud</p>
         </div>
 
         <div className="hud-panel rounded-2xl p-4 sm:p-5 transition hover:border-cyan-500/40">
@@ -561,12 +577,179 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
       </div>
 
-      {/* Grid dos 6 Módulos em Ordem Didática */}
+      {/* Novo Destaque Especial: 7 Novos Materiais de Cloud Computing & Perímetro (Docs #26 a #32) */}
+      <div
+        className={`rounded-3xl p-6 sm:p-7 border relative overflow-hidden backdrop-blur-xl transition-all ${
+          isLightMode
+            ? 'bg-gradient-to-br from-sky-50/70 via-white to-indigo-50/50 border-sky-200/90 shadow-[0_4px_24px_-4px_rgba(14,165,233,0.1)]'
+            : 'bg-gradient-to-br from-[#061224] via-[#081730] to-[#0d1d3a] border-sky-500/30 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.7)]'
+        }`}
+      >
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+          <div>
+            <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 font-mono text-[11px] font-bold tracking-wider uppercase mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse" />
+              <span>Novo Módulo 7 Disponível · Outubro / 2026</span>
+            </div>
+            <h2 className={`text-xl sm:text-2xl font-extrabold tracking-tight ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+              7 Novos Materiais de Cloud Security, IaaS/PaaS/SaaS &amp; Perímetro (Docs #26 a #32)
+            </h2>
+            <p className={`text-xs sm:text-sm mt-1 ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
+              Conteúdo completo do <strong className={isLightMode ? 'text-slate-900' : 'text-sky-300'}>Prof. Rômulo Pereira de Almeida</strong> incluindo 10 microtarefas práticas resolvidas e arquivos PDF originais.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2.5">
+            <button
+              onClick={() => onSelectTab('mod7')}
+              className="px-4 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-semibold text-xs transition flex items-center gap-2 shadow-md shadow-sky-600/20 shrink-0 cursor-pointer"
+            >
+              <Cloud className="w-4 h-4" />
+              <span>Acessar Módulo 7 Completo</span>
+            </button>
+          </div>
+        </div>
+
+        {/* 3 Pillars of Cloud Security */}
+        <div className="grid md:grid-cols-3 gap-4">
+          {/* Cloud Pillar 1: Fundamentos Cloud & NIST */}
+          <div
+            className={`p-4 rounded-2xl border transition flex flex-col justify-between group ${
+              isLightMode ? 'bg-white/90 border-slate-200 shadow-sm' : 'bg-slate-900/90 border-slate-800'
+            }`}
+          >
+            <div>
+              <div className="flex items-center justify-between text-[10px] font-mono mb-2">
+                <span className="px-2 py-0.5 rounded bg-sky-500/15 text-sky-600 dark:text-sky-400 font-bold border border-sky-500/30">
+                  Docs #26 e #27
+                </span>
+                <span className="text-slate-500 font-semibold">26 páginas / slides</span>
+              </div>
+              <h4 className={`text-sm font-bold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+                Computação em Nuvem: IaaS, PaaS, SaaS &amp; FinOps
+              </h4>
+              <p className={`text-xs mt-1.5 leading-relaxed ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
+                NIST SP 800-145, 5 características essenciais, virtualização (Hypervisor Tipo 1 e 2) vs contêineres, finanças em nuvem (FinOps / Capex vs Opex) e Caso TechNova.
+              </p>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-2">
+              <a
+                href="/assets/aistudio/Material_Didatico_Cloud_IaaS_PaaS_SaaS_JJ_23fdc4d5.pdf"
+                download
+                className="px-2.5 py-1 rounded-lg bg-sky-600 hover:bg-sky-700 text-white font-semibold text-[10px] flex items-center gap-1 transition shadow-sm"
+              >
+                <span>Apostila (11p)</span>
+              </a>
+              <a
+                href="/assets/aistudio/Arquitetura_e_Seguranc_a_em_Nuvem_152f7053.pdf"
+                download
+                className={`px-2.5 py-1 rounded-lg border font-semibold text-[10px] flex items-center gap-1 transition ${
+                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-850 hover:bg-slate-800 border-slate-700 text-slate-200'
+                }`}
+              >
+                <span>Blueprint (15s)</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Cloud Pillar 2: Responsabilidade Compartilhada */}
+          <div
+            className={`p-4 rounded-2xl border transition flex flex-col justify-between group ${
+              isLightMode ? 'bg-white/90 border-slate-200 shadow-sm' : 'bg-slate-900/90 border-slate-800'
+            }`}
+          >
+            <div>
+              <div className="flex items-center justify-between text-[10px] font-mono mb-2">
+                <span className="px-2 py-0.5 rounded bg-blue-500/15 text-blue-600 dark:text-blue-400 font-bold border border-blue-500/30">
+                  Docs #28 e #29
+                </span>
+                <span className="text-slate-500 font-semibold">19 páginas / slides</span>
+              </div>
+              <h4 className={`text-sm font-bold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+                Modelo de Responsabilidade Compartilhada na Prática
+              </h4>
+              <p className={`text-xs mt-1.5 leading-relaxed ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
+                Matriz de 9 camadas (física até dados), papéis RACI (SecInfo, CloudOps, DevSecOps), 7 incidentes reais resolvidos e template oficial INC-2026-014.
+              </p>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-2">
+              <a
+                href="/assets/aistudio/Material_Didatico_Responsabilidade_Compartilhada_Na_Pratica_JJ_5fe39f6f.pdf"
+                download
+                className="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[10px] flex items-center gap-1 transition shadow-sm"
+              >
+                <span>Apostila (7p)</span>
+              </a>
+              <a
+                href="/assets/aistudio/Responsabilidade_Compartilhada_na_Nuvem_79add434.pdf"
+                download
+                className={`px-2.5 py-1 rounded-lg border font-semibold text-[10px] flex items-center gap-1 transition ${
+                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-850 hover:bg-slate-800 border-slate-700 text-slate-200'
+                }`}
+              >
+                <span>Blueprint (12s)</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Cloud Pillar 3: Redes & 10 Microtarefas */}
+          <div
+            className={`p-4 rounded-2xl border transition flex flex-col justify-between group ${
+              isLightMode ? 'bg-white/90 border-slate-200 shadow-sm' : 'bg-slate-900/90 border-slate-800'
+            }`}
+          >
+            <div>
+              <div className="flex items-center justify-between text-[10px] font-mono mb-2">
+                <span className="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-bold border border-emerald-500/30">
+                  Docs #30, #31 e #32
+                </span>
+                <span className="text-slate-500 font-semibold">25 páginas / slides</span>
+              </div>
+              <h4 className={`text-sm font-bold ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+                Segurança em Cloud: Redes &amp; 10 Microtarefas
+              </h4>
+              <p className={`text-xs mt-1.5 leading-relaxed ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
+                VPC, sub-redes em 3 camadas, Stateful Security Groups vs Stateless NACLs, WAF, mitigação DDoS, Zero Trust e 10 microtarefas técnicas resolvidas com CLI.
+              </p>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-2">
+              <a
+                href="/assets/aistudio/Material_Didatico_Seguranca_Cloud_Redes_Perimetro_JJ_0f616616.pdf"
+                download
+                className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-[10px] flex items-center gap-1 transition shadow-sm"
+              >
+                <span>Apostila (7p)</span>
+              </a>
+              <a
+                href="/assets/aistudio/microtarefas_estudantes_seguranca_nuvem_2368b864.pdf"
+                download
+                className="px-2.5 py-1 rounded-lg bg-sky-600 hover:bg-sky-700 text-white font-semibold text-[10px] flex items-center gap-1 transition shadow-sm"
+              >
+                <span>10 Microtarefas</span>
+              </a>
+              <a
+                href="/assets/aistudio/Seguranc_a_de_Redes_e_Peri_metro_em_Nuvem_077a159f.pdf"
+                download
+                className={`px-2.5 py-1 rounded-lg border font-semibold text-[10px] flex items-center gap-1 transition ${
+                  isLightMode ? 'bg-slate-100 hover:bg-slate-200 border-slate-300 text-slate-700' : 'bg-slate-850 hover:bg-slate-800 border-slate-700 text-slate-200'
+                }`}
+              >
+                <span>Blueprint</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Grid dos 7 Módulos em Ordem Didática */}
       <div>
         <div className="flex items-center justify-between mb-4">
           <h2 className={`text-lg sm:text-xl font-bold flex items-center gap-2 ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
             <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
-            <span>Módulos Didáticos da Formação (Em Ordem Cronológica)</span>
+            <span>Módulos Didáticos da Formação (7 Módulos em Ordem Cronológica)</span>
           </h2>
           <span className="text-xs text-slate-400 font-mono hidden sm:inline">
             Clique em qualquer módulo para estudar
@@ -773,6 +956,25 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
             <p className={`text-[11px] mt-1 ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
               Teste autorizações e segregação de funções entre perfis conflitantes.
+            </p>
+          </div>
+
+          <div
+            onClick={() => onSelectTab('mod7')}
+            className={`p-4 rounded-2xl border cursor-pointer transition group ${
+              isLightMode
+                ? 'bg-sky-50/80 hover:bg-sky-100/90 border-sky-200 hover:border-sky-400'
+                : 'bg-slate-900/60 hover:bg-slate-800/80 border-slate-800/80 hover:border-sky-500/50'
+            }`}
+          >
+            <div className="w-8 h-8 rounded-xl bg-sky-500/15 flex items-center justify-center mb-2.5">
+              <Cloud className="w-4 h-4 text-sky-400" />
+            </div>
+            <div className={`text-xs font-bold group-hover:text-sky-500 transition ${isLightMode ? 'text-slate-900' : 'text-white'}`}>
+              Simulador SG vs NACL (Cloud)
+            </div>
+            <p className={`text-[11px] mt-1 ${isLightMode ? 'text-slate-600' : 'text-slate-400'}`}>
+              Dispare pacotes de ida e volta e teste regras de portas efêmeras.
             </p>
           </div>
 

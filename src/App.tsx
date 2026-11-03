@@ -11,7 +11,9 @@ import { Module3View } from './components/Module3View';
 import { Module4View } from './components/Module4View';
 import { Module5View } from './components/Module5View';
 import { Module6View } from './components/Module6View';
+import { Module7View } from './components/Module7View';
 import { QuizView } from './components/QuizView';
+import { OfflineIndicator } from './components/pwa/OfflineIndicator';
 import { acervoDocs, TechDoc } from './data/documents';
 import { quizQuestionsData } from './data/modulesData';
 import {
@@ -233,7 +235,7 @@ export default function App() {
         />
 
         {/* Content Area */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto space-y-8">
+        <main className="flex-1 min-w-0 max-w-full p-3 sm:p-6 lg:p-8 overflow-y-auto space-y-8">
           {/* Global Search Results Dropdown/Box if user searches */}
           {searchQuery.trim().length >= 2 && (
             <div
@@ -327,6 +329,7 @@ export default function App() {
           )}
           {currentTab === 'mod5' && <Module5View isLightMode={isLightMode} />}
           {currentTab === 'mod6' && <Module6View isLightMode={isLightMode} />}
+          {currentTab === 'mod7' && <Module7View isLightMode={isLightMode} />}
           {currentTab === 'quiz' && (
             <QuizView
               userAnswers={userQuizAnswers}
@@ -408,6 +411,9 @@ export default function App() {
         quizScore={correctQuizScore}
         totalQuestions={totalQuestions}
       />
+
+      {/* PWA Offline Connectivity Indicator */}
+      <OfflineIndicator />
     </div>
   );
 }

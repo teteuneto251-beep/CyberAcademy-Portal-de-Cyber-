@@ -115,6 +115,18 @@ export const SecurityRadarChart: React.FC<SecurityRadarChartProps> = ({
       description: 'Arquitetura XACML PEP/PDP/PIP/PAP, SoD corporativo e Modelo Híbrido RBAC+ABAC.',
       keySkills: ['Motor H1 Decisão', 'Regra A1 Ausente!=Permitido', 'FIDO2 / WebAuthn'],
       tabId: 'mod6'
+    },
+    {
+      module: 'Módulo 7',
+      pillar: 'Cloud & Perímetro',
+      subject: 'IaaS/PaaS/SaaS & Redes',
+      score: 96,
+      benchmark: 82,
+      fullMark: 100,
+      level: 'Especialista',
+      description: 'NIST SP 800-145, Matriz de Responsabilidade Compartilhada, Stateful SG vs Stateless NACL e 10 microtarefas.',
+      keySkills: ['NIST SP 800-145', 'Stateful SG vs Stateless NACL', 'VPC 3-Tier & CIS'],
+      tabId: 'mod7'
     }
   ]);
 
@@ -143,7 +155,8 @@ export const SecurityRadarChart: React.FC<SecurityRadarChartProps> = ({
       { ...data[2], score: 88 },
       { ...data[3], score: 94 },
       { ...data[4], score: 92 },
-      { ...data[5], score: 98 }
+      { ...data[5], score: 98 },
+      { ...data[6], score: 96 }
     ]);
   };
 
@@ -202,11 +215,11 @@ export const SecurityRadarChart: React.FC<SecurityRadarChartProps> = ({
         <div>
           <div className="flex items-center gap-2 text-xs font-mono uppercase mb-1">
             <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
-            <span className="text-red-500 font-bold">Matriz Hexagonal de Proficiência</span>
+            <span className="text-red-500 font-bold">Matriz Heptagonal de Proficiência</span>
             <span className="text-slate-400">• Recharts Interativo</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight">
-            Nível de Competência nos 6 Módulos de Defesa
+            Nível de Competência nos 7 Módulos de Defesa
           </h3>
           <p
             className={`text-xs sm:text-sm mt-1 leading-relaxed ${

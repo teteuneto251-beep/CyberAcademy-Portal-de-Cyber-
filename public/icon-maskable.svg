@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="mBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050811" />
+      <stop offset="50%" stop-color="#091228" />
+      <stop offset="100%" stop-color="#0d1b3e" />
+    </linearGradient>
+    <linearGradient id="mShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <linearGradient id="mShieldInnerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b1736" />
+      <stop offset="100%" stop-color="#040817" />
+    </linearGradient>
+    <linearGradient id="mCoreGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed background with no rounded corners for Android Maskable -->
+  <rect width="512" height="512" fill="url(#mBgGrad)" />
+
+  <!-- Centered, scaled content respecting 15% safe zone margin -->
+  <g transform="translate(64, 64) scale(0.75)">
+    <!-- Main Shield Body -->
+    <path
+      d="M 256 80
+         L 386 128
+         C 386 252 334 362 256 414
+         C 178 362 126 252 126 128
+         Z"
+      fill="url(#mShieldGrad)"
+    />
+
+    <!-- Inner Dark Shield Cavity -->
+    <path
+      d="M 256 98
+         L 368 140
+         C 368 244 322 342 256 390
+         C 190 342 144 244 144 140
+         Z"
+      fill="url(#mShieldInnerGrad)"
+      stroke="#38bdf8"
+      stroke-opacity="0.3"
+      stroke-width="2"
+    />
+
+    <!-- Shackle -->
+    <path
+      d="M 216 230
+         L 216 195
+         C 216 172.9 233.9 155 256 155
+         C 278.1 155 296 172.9 296 195
+         L 296 230"
+      fill="none"
+      stroke="url(#mCoreGlow)"
+      stroke-width="16"
+      stroke-linecap="round"
+    />
+
+    <!-- Padlock Body -->
+    <rect
+      x="196"
+      y="226"
+      width="120"
+      height="96"
+      rx="20"
+      fill="url(#mCoreGlow)"
+    />
+
+    <!-- Lock Core Checkmark -->
+    <path
+      d="M 234 274
+         L 249 289
+         L 278 259"
+      fill="none"
+      stroke="#040817"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+</svg>

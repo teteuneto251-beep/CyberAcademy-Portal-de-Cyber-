@@ -18,8 +18,10 @@ import {
   Cpu,
   Linkedin,
   Calendar,
-  ExternalLink
+  ExternalLink,
+  Cloud
 } from 'lucide-react';
+import { PWAInstallButton } from './pwa/PWAInstallButton';
 
 interface SidebarProps {
   currentTab: string;
@@ -42,7 +44,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     {
       id: 'dashboard',
       label: 'Visão Geral & Acervo',
-      sub: 'Estatísticas & 25 Docs',
+      sub: 'Estatísticas & 32 Docs',
       icon: LayoutDashboard,
       color: 'text-red-400'
     },
@@ -87,6 +89,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
       sub: 'SSO, NHI, Cofres, RBAC & SoD',
       icon: UserCheck,
       color: 'text-rose-400'
+    },
+    {
+      id: 'mod7',
+      label: 'Módulo 7: Cloud & Redes',
+      sub: 'IaaS/PaaS/SaaS, Matriz & Perímetro',
+      icon: Cloud,
+      color: 'text-sky-400'
     },
     {
       id: 'quiz',
@@ -137,7 +146,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-600 dark:text-cyan-400 font-bold">
                 Trilha Técnica &amp; Módulos
               </span>
-              <span className="text-[10px] font-mono text-slate-400">8 Áreas</span>
+              <span className="text-[10px] font-mono text-slate-400">9 Áreas</span>
             </div>
             <nav className="space-y-1">
               {navItems.map((item) => {
@@ -281,8 +290,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 </span>
                 <ChevronRight className="w-3 h-3 text-cyan-400" />
               </button>
+
+              <button
+                onClick={() => handleNavClick('mod7')}
+                className={`w-full text-left px-3 py-2 rounded-xl text-xs flex items-center justify-between border transition cursor-pointer font-semibold ${
+                  isLightMode
+                    ? 'bg-sky-50/80 hover:bg-sky-100/80 text-sky-900 border-sky-200'
+                    : 'bg-sky-950/30 hover:bg-sky-900/40 text-sky-300 border-sky-500/30'
+                }`}
+              >
+                <span className="flex items-center gap-2">
+                  <Cloud className="w-3.5 h-3.5 text-sky-400" />
+                  <span>Simulador SG vs NACL (Cloud)</span>
+                </span>
+                <ChevronRight className="w-3 h-3 text-sky-400" />
+              </button>
             </div>
           </div>
+        </div>
+
+        {/* PWA Install Button */}
+        <div className="mt-4 px-0.5">
+          <PWAInstallButton variant="sidebar" isLightMode={isLightMode} />
         </div>
 
         {/* Card de Autoria Oficial: José Matheus & Prof. Rômulo */}
