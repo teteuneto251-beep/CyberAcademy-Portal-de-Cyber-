@@ -1,0 +1,6 @@
+# Robots.txt - Portal de Engenharia & Defesa Cibernética
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://cyber20.netlify.app/sitemap.xml

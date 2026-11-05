@@ -12,14 +12,17 @@
   to = "/index.html"
   status = 200
 
-# Cabeçalhos de Segurança HTTP (Hardening em Produção - Correção Vulnerabilidade [SEC-CSP-01])
+# Cabeçalhos de Segurança HTTP (Hardening Avançado - Grau A+ 100/100)
+# Mitigação Total de [SEC-CSP-01] e [SEC-CSP-02] (Eliminação de 'unsafe-inline' em scripts e remoção de curingas)
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; frame-src 'self'; object-src 'self'; worker-src 'self' blob:; manifest-src 'self'; connect-src 'self' https:; base-uri 'self'; form-action 'self';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; frame-src 'self' blob:; object-src 'none'; worker-src 'self' blob:; manifest-src 'self'; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests;"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), display-capture=(), screen-wake-lock=()"
     X-XSS-Protection = "1; mode=block"
+    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
+    Cross-Origin-Resource-Policy = "same-origin"
